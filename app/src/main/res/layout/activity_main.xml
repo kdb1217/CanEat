@@ -8,7 +8,7 @@
     android:background="@color/CanEatbackground">
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/option_save"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@drawable/save_button"
@@ -26,11 +26,153 @@
         android:layout_marginEnd="10dp"
         android:background="@drawable/roundlayout"
         android:orientation="vertical"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/option_save"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.49"
+        app:layout_constraintHorizontal_bias="0.487"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"/>
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.691" >
+
+        <LinearLayout
+            android:id="@+id/diseaselayout"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:layout_marginTop="20dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/disease"
+                android:layout_width="87dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="30dp"
+                android:layout_weight="1"
+                android:text="지병"
+                android:textColor="#00000B"
+                android:textStyle="normal" />
+
+            <Button
+                android:id="@+id/disease_button"
+                android:layout_width="1dp"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="15dp"
+                android:layout_weight="1"
+                android:background="@drawable/register_button"
+                android:text="등록하기" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/veganlayout"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:layout_marginTop="20dp"
+            android:orientation="horizontal">
+
+
+            <TextView
+                android:id="@+id/vegan"
+                android:layout_width="87dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="30dp"
+                android:layout_weight="1"
+                android:text="비건"
+                android:textColor="#00000B"
+                android:textStyle="normal" />
+
+            <Button
+                android:id="@+id/vegan_button"
+                android:layout_width="1dp"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="15dp"
+                android:layout_weight="1"
+                android:background="@drawable/register_button"
+                android:text="등록하기" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/allegric_layout"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:layout_marginTop="20dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/allegric"
+                android:layout_width="87dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="30dp"
+                android:layout_weight="1"
+                android:text="알레르기"
+                android:textColor="#00000B"
+                android:textStyle="normal" />
+
+            <Button
+                android:id="@+id/allegric_button"
+                android:layout_width="1dp"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="15dp"
+                android:layout_weight="1"
+                android:background="@drawable/register_button"
+                android:text="등록하기" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/religion_layout"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:layout_marginTop="20dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/religion"
+                android:layout_width="87dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="30dp"
+                android:layout_weight="1"
+                android:text="종교"
+                android:textColor="#00000B"
+                android:textStyle="normal" />
+
+            <Button
+                android:id="@+id/religion_button"
+                android:layout_width="1dp"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="15dp"
+                android:layout_weight="1"
+                android:background="@drawable/register_button"
+                android:text="등록하기" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ingredient_layout"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:layout_marginTop="20dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/ingredient"
+                android:layout_width="87dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="30dp"
+                android:layout_weight="1"
+                android:text="못먹는 성분"
+                android:textColor="#00000B"
+                android:textStyle="normal" />
+
+            <Button
+                android:id="@+id/ingredient_button"
+                android:layout_width="1dp"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="15dp"
+                android:layout_weight="1"
+                android:background="@drawable/register_button"
+                android:text="등록하기" />
+        </LinearLayout>
+
+    </LinearLayout>
 
 </android.support.constraint.ConstraintLayout>
 
