@@ -7,13 +7,35 @@
     tools:context=".SelectActivity"
     android:background="@color/CanEatbackground">
 
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_gravity="center"
+            android:background="@drawable/caneaticon"
+            android:contentDescription="Can Eat?">
+
+        </ImageView>
+
+
+    </android.support.v7.widget.Toolbar>
+
     <Button
         android:id="@+id/option_save"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@drawable/save_button"
-        android:clickable="true"
-        android:text="설정 저장"
+        android:text="@string/optionsave"
+        android:textColor="#000000"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -22,6 +44,7 @@
     </Button>
 
     <LinearLayout
+        android:id="@+id/linearLayout"
         android:layout_width="350dp"
         android:layout_height="560dp"
         android:layout_marginStart="10dp"
@@ -33,7 +56,7 @@
         app:layout_constraintHorizontal_bias="0.487"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.691" >
+        app:layout_constraintVertical_bias="0.691">
 
         <LinearLayout
             android:id="@+id/diseaselayout"
@@ -46,9 +69,9 @@
                 android:id="@+id/disease"
                 android:layout_width="87dp"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="30dp"
+                android:layout_marginStart="30dp"
                 android:layout_weight="1"
-                android:text="지병"
+                android:text="@string/disease"
                 android:textColor="#00000B"
                 android:textStyle="normal" />
 
@@ -56,10 +79,11 @@
                 android:id="@+id/disease_button"
                 android:layout_width="1dp"
                 android:layout_height="wrap_content"
-                android:layout_marginRight="15dp"
+                android:layout_marginEnd="15dp"
                 android:layout_weight="1"
                 android:background="@drawable/register_button"
-                android:text="등록하기" />
+                android:text="등록하기"
+                android:textColor="#000000" />
 
         </LinearLayout>
 
@@ -75,9 +99,9 @@
                 android:id="@+id/vegan"
                 android:layout_width="87dp"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="30dp"
+                android:layout_marginStart="30dp"
                 android:layout_weight="1"
-                android:text="비건"
+                android:text="@string/vegan"
                 android:textColor="#00000B"
                 android:textStyle="normal" />
 
@@ -88,7 +112,8 @@
                 android:layout_marginRight="15dp"
                 android:layout_weight="1"
                 android:background="@drawable/register_button"
-                android:text="등록하기" />
+                android:text="@string/register"
+                android:textColor="#000000" />
 
         </LinearLayout>
 
@@ -103,7 +128,7 @@
                 android:id="@+id/allegric"
                 android:layout_width="87dp"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="30dp"
+                android:layout_marginStart="30dp"
                 android:layout_weight="1"
                 android:text="알레르기"
                 android:textColor="#00000B"
@@ -113,10 +138,11 @@
                 android:id="@+id/allegric_button"
                 android:layout_width="1dp"
                 android:layout_height="wrap_content"
-                android:layout_marginRight="15dp"
+                android:layout_marginEnd="15dp"
                 android:layout_weight="1"
                 android:background="@drawable/register_button"
-                android:text="등록하기" />
+                android:text="@string/Register"
+                android:textColor="#000000" />
 
         </LinearLayout>
 
@@ -131,7 +157,7 @@
                 android:id="@+id/religion"
                 android:layout_width="87dp"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="30dp"
+                android:layout_marginStart="30dp"
                 android:layout_weight="1"
                 android:text="종교"
                 android:textColor="#00000B"
@@ -141,10 +167,11 @@
                 android:id="@+id/religion_button"
                 android:layout_width="1dp"
                 android:layout_height="wrap_content"
-                android:layout_marginRight="15dp"
+                android:layout_marginEnd="15dp"
                 android:layout_weight="1"
                 android:background="@drawable/register_button"
-                android:text="등록하기" />
+                android:text="@string/Register"
+                android:textColor="#000000" />
         </LinearLayout>
 
         <LinearLayout
@@ -158,7 +185,7 @@
                 android:id="@+id/ingredient"
                 android:layout_width="87dp"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="30dp"
+                android:layout_marginStart="30dp"
                 android:layout_weight="1"
                 android:text="못먹는 성분"
                 android:textColor="#00000B"
@@ -168,10 +195,11 @@
                 android:id="@+id/ingredient_button"
                 android:layout_width="1dp"
                 android:layout_height="wrap_content"
-                android:layout_marginRight="15dp"
+                android:layout_marginEnd="15dp"
                 android:layout_weight="1"
                 android:background="@drawable/register_button"
-                android:text="등록하기" />
+                android:text="@string/Register"
+                android:textColor="#000000" />
         </LinearLayout>
 
     </LinearLayout>
