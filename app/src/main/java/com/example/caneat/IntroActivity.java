@@ -15,11 +15,11 @@ public class IntroActivity  extends AppCompatActivity{
         handler.postDelayed(new Runnable(){
             @Override
             public void run() {
-                Intent intent = new Intent (getApplicationContext(), MainActivity.class);
+                Intent intent = new Intent (getApplicationContext(), SelectActivity.class);
                 startActivity(intent); //인트로 실행후 MainActivity 실행
                 finish();
             }
-        },1000); //1초후 인트로 실
+        },1000); //1초후 인트로 실행
 
     }
 }
