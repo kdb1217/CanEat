@@ -19,7 +19,7 @@ public class IntroActivity  extends AppCompatActivity{
                 startActivity(intent); //인트로 실행후 MainActivity 실행
                 finish();
             }
-        },1000); //1초후 인트로 실행
+        },1500); //1.5초후 인트로 실행
 
     }
 }
