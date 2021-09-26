@@ -18,13 +18,24 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <ImageView
-            android:layout_width="60dp"
-            android:layout_height="60dp"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
             android:layout_gravity="center"
             android:background="@drawable/caneaticon"
             android:contentDescription="Can Eat?">
 
         </ImageView>
+
+        <Button
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_gravity="right"
+            android:background="@drawable/caneatmyinfobutton"
+            android:clickable="true"
+            tools:ignore="SpeakableTextPresentCheck"
+            tools:layout_editor_absoluteX="351dp">
+
+        </Button>
 
 
     </android.support.v7.widget.Toolbar>
@@ -78,8 +89,8 @@
             <Button
                 android:id="@+id/disease_button"
                 android:layout_width="1dp"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="15dp"
+                android:layout_height="match_parent"
+                android:layout_marginRight="15dp"
                 android:layout_weight="1"
                 android:background="@drawable/register_button"
                 android:text="등록하기"
@@ -108,7 +119,7 @@
             <Button
                 android:id="@+id/vegan_button"
                 android:layout_width="1dp"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:layout_marginRight="15dp"
                 android:layout_weight="1"
                 android:background="@drawable/register_button"
@@ -137,7 +148,7 @@
             <Button
                 android:id="@+id/allegric_button"
                 android:layout_width="1dp"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:layout_marginEnd="15dp"
                 android:layout_weight="1"
                 android:background="@drawable/register_button"
@@ -166,7 +177,7 @@
             <Button
                 android:id="@+id/religion_button"
                 android:layout_width="1dp"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:layout_marginEnd="15dp"
                 android:layout_weight="1"
                 android:background="@drawable/register_button"
@@ -194,7 +205,7 @@
             <Button
                 android:id="@+id/ingredient_button"
                 android:layout_width="1dp"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:layout_marginEnd="15dp"
                 android:layout_weight="1"
                 android:background="@drawable/register_button"
