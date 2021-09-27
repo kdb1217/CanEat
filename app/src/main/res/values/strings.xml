@@ -1,3 +1,10 @@
 <resources>
-    <string name="app_name">CanEat</string>
+    <string name="app_name">Can Eat?</string>
+    <string name="optionsave">옵션 저장</string>
+    <string name="disease">지병</string>
+    <string name="register">등록하기</string>
+    <string name="vegan">비건</string>
+    <string name="Register">등록하기</string>
+    <string name="myinfo">내정보</string>
+    <string name="change">변경하기</string>
 </resources>
