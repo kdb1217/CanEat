@@ -27,6 +27,7 @@ public class IntroActivity  extends AppCompatActivity {
     protected void onPause(){
         super.onPause();
         finish();
+        //멈추는 함수
     }
 
 }
