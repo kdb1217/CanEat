@@ -1,11 +1,11 @@
 package com.example.caneat;
 
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.os.Handler;
 
-public class IntroActivity  extends AppCompatActivity{
+public class IntroActivity  extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,4 +22,12 @@ public class IntroActivity  extends AppCompatActivity{
         },1500); //1.5초후 인트로 실행
 
     }
+
+    @Override
+    protected void onPause(){
+        super.onPause();
+        finish();
+    }
+
 }
+

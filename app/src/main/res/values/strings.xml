@@ -7,4 +7,5 @@
     <string name="Register">등록하기</string>
     <string name="myinfo">내정보</string>
     <string name="change">변경하기</string>
+    <string name="can_eat">Can Eat?</string>
 </resources>
