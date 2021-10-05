@@ -1,4 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <string name="app_name">caneat</string>
+    <string name="optionsave">옵션 저장</string>
+    <string name="disease">지병</string>
+    <string name="register">등록하기</string>
+    <string name="vegan">비건</string>
+    <string name="Register">등록하기</string>
     <string name="myinfo">내정보</string>
+    <string name="change">변경하기</string>
+    <string name="can_eat">Can Eat?</string>
+    <string name="kakao_app_key">{kakao_APP_KEY:caneat}</string>
+    <string name="kakao_native_key">kakao_bec3f6cab9fb0a2ba54b6b866c36ba73}</string>
 </resources>
