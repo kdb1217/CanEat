@@ -14,7 +14,7 @@
         android:theme="@style/Theme.AppCompat.NoActionBar" >
         <meta-data
             android:name="com.kakao.sdk.AppKey"
-            android:value="@string/kakao_app_key">
+            android:value="bec3f6cab9fb0a2ba54b6b866c36ba73">
         </meta-data>
 
 
@@ -40,7 +40,7 @@
 
                 <!-- Redirect URI: "kakao{NATIVE_APP_KEY}://oauth" -->
                 <data android:host="oauth"
-                    android:scheme="kakao_bec3f6cab9fb0a2ba54b6b866c36ba73" />
+                    android:scheme="kakaobec3f6cab9fb0a2ba54b6b866c36ba73" />
             </intent-filter>
         </activity>
 

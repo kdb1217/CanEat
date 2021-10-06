@@ -3,9 +3,7 @@ dependencyResolutionManagement {
     repositories {
         google()
         mavenCentral()
-        jcenter()
         maven { url 'https://devrepo.kakao.com/nexus/content/groups/public/' }
-       // Warning: this repository is going to shut down soon
     }
 }
 rootProject.name = "CanEat"
