@@ -43,9 +43,29 @@
                     android:scheme="kakaobec3f6cab9fb0a2ba54b6b866c36ba73" />
             </intent-filter>
         </activity>
+        <activity android:name=".SelectActivity">
 
+        </activity>
+        <activity android:name=".Register_disease_activity">
 
+        </activity>
+        <activity android:name=".Register_allergic_activity">
 
+        </activity>
+
+        <activity android:name=".Register_vegan_activity">
+        </activity>
+
+        <activity android:name=".Register_ingredient_activity">
+        </activity>
+
+        <activity android:name=".Register_religion_activity">
+
+        </activity>
+
+        <activity android:name=".Myinfo_activity">
+
+        </activity>
 
     </application>
 

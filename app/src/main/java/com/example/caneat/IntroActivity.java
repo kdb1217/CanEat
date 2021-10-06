@@ -1,5 +1,6 @@
 package com.example.caneat;
 
+import android.content.Intent;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.content.pm.Signature;
@@ -62,6 +63,8 @@ public class IntroActivity  extends AppCompatActivity {
                                 }
                                 Account user1 = user.getKakaoAccount();
                                 System.out.println("사용자 계정" + user1);
+                                Intent intent =new Intent(getApplicationContext(), SelectActivity.class);
+                                startActivity(intent);
                             }
                             return null;
                         });
@@ -92,6 +95,8 @@ public class IntroActivity  extends AppCompatActivity {
                                     }
                                     Account user1 = user.getKakaoAccount();
                                     System.out.println("사용자 계정" + user1);
+                                    Intent intent =new Intent(getApplicationContext(), SelectActivity.class);
+                                    startActivity(intent);
                                 }
                                 return null;
                             });
@@ -100,6 +105,7 @@ public class IntroActivity  extends AppCompatActivity {
                         });
 
                     }
+
                     }
             });
 
