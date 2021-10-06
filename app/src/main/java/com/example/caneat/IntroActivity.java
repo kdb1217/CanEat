@@ -22,48 +22,87 @@ public class IntroActivity  extends AppCompatActivity {
     private static final String TAG="사용자";
 
 
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_intro); // xml파일과 자바파일 연결
 
-        getHashKey(); //hash값 구하는 함수 호출
-        social_login = findViewById(R.id.social_login);
+       // getHashKey(); //hash값 구하는 함수 호출
+
+        social_login = findViewById(R.id.kakao_login);
+
 
         social_login.setOnClickListener(new View.OnClickListener() {
 
+
             @Override
             public void onClick(View v) {
-                UserApiClient.getInstance().loginWithKakaoTalk(IntroActivity.this,(oAuthToken,error) ->
-                {
-                    if (error != null) {
-                        Log.e(TAG, "로그인 실패", error);
-                    } else if (oAuthToken != null) {
-                        Log.i(TAG, "로그인 성공(토큰) : "+oAuthToken.getAccessToken());
-                    }
-
-                    UserApiClient.getInstance().me((user,meError) -> {
-                        if (meError != null) {
-                            Log.e(TAG, "사용자 정보 요청 실패",meError);
-                        } else {
-                            System.out.println("로그인 완료");
-                            Log.i(TAG, user.toString());
-                            {
-                                Log.i(TAG, "사용자 정보 요청 성공" +
-                                        "\n회원번호: "+user.getId() +
-                                        "\n이메일: "+user.getKakaoAccount().getEmail());
-                            }
-                            Account user1 = user.getKakaoAccount();
-                            System.out.println("사용자 계정" + user1);
+                    if(UserApiClient.getInstance().isKakaoTalkLoginAvailable(IntroActivity.this))
+                    {
+                    UserApiClient.getInstance().loginWithKakaoTalk(IntroActivity.this, (oAuthtoken, error) ->
+                    {
+                        if (error != null) {
+                            Log.e(TAG, "로그인 실패", error);
+                        } else if (oAuthtoken != null) {
+                            Log.i(TAG, "로그인 성공(토큰) : " + oAuthtoken.getAccessToken());
                         }
-                        return null;
+
+                        UserApiClient.getInstance().me((user, meError) -> {
+                            if (meError != null) {
+                                Log.e(TAG, "사용자 정보 요청 실패", meError);
+                            } else {
+                                System.out.println("로그인 완료");
+                                Log.i(TAG, user.toString());
+                                {
+                                    Log.i(TAG, "사용자 정보 요청 성공" +
+                                            "\n회원번호: " + user.getId() +
+                                            "\n이메일: " + user.getKakaoAccount().getEmail());
+                                }
+                                Account user1 = user.getKakaoAccount();
+                                System.out.println("사용자 계정" + user1);
+                            }
+                            return null;
                         });
 
-                    return null;
-                });
+                        return null;
+                    });
 
-            }
-        });
+                }
+                    else {
+                        UserApiClient.getInstance().loginWithKakaoAccount(IntroActivity.this, (oAuthtoken, error) ->
+                        {
+                            if (error != null) {
+                                Log.e(TAG, "로그인 실패", error);
+                            } else if (oAuthtoken != null) {
+                                Log.i(TAG, "로그인 성공(토큰) : " + oAuthtoken.getAccessToken());
+                            }
+
+                            UserApiClient.getInstance().me((user, meError) -> {
+                                if (meError != null) {
+                                    Log.e(TAG, "사용자 정보 요청 실패", meError);
+                                } else {
+                                    System.out.println("로그인 완료");
+                                    Log.i(TAG, user.toString());
+                                    {
+                                        Log.i(TAG, "사용자 정보 요청 성공" +
+                                                "\n회원번호: " + user.getId() +
+                                                "\n이메일: " + user.getKakaoAccount().getEmail());
+                                    }
+                                    Account user1 = user.getKakaoAccount();
+                                    System.out.println("사용자 계정" + user1);
+                                }
+                                return null;
+                            });
+
+                            return null;
+                        });
+
+                    }
+                    }
+            });
+
     }
 
 
