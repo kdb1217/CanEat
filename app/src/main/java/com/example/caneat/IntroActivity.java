@@ -9,18 +9,36 @@ import android.util.Base64;
 import android.util.Log;
 import android.view.View;
 import android.widget.ImageButton;
+import android.widget.Toast;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.kakao.sdk.user.UserApiClient;
-import com.kakao.sdk.user.model.Account;
+
+import com.google.android.gms.auth.api.Auth;
+import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
+import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
+import com.google.android.gms.auth.api.signin.GoogleSignInClient;
+import com.google.android.gms.auth.api.signin.GoogleSignInResult;
+import com.google.android.gms.common.ConnectionResult;
+import com.google.android.gms.common.SignInButton;
+import com.google.android.gms.common.api.GoogleApiClient;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.AuthCredential;
+import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.GoogleAuthProvider;
 
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 
-public class IntroActivity  extends AppCompatActivity {
-    private ImageButton social_login;
-    private static final String TAG="사용자";
+public class IntroActivity  extends AppCompatActivity implements GoogleApiClient.OnConnectionFailedListener {
+    private SignInButton google_login; //구글 로그인버
+    private FirebaseAuth auth; //파이어 베이스 인증 객체
+    private GoogleApiClient googleApiClient; //구글 api 클라이언트 객체
+    private static final int REQ_SIGN_GOOGLE = 100; //구글 로그인 결과 코
 
 
 
@@ -28,110 +46,68 @@ public class IntroActivity  extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_intro); // xml파일과 자바파일 연결
+        setContentView(R.layout.activity_intro); // xml파일과 자바파일 연결튼
 
-       // getHashKey(); //hash값 구하는 함수 호출
+        GoogleSignInOptions googleSignInOptions = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
+                .requestIdToken(getString(R.string.default_web_client_id))
+                .requestEmail()
+                .build();
 
-        social_login = findViewById(R.id.kakao_login);
+        googleApiClient = new GoogleApiClient.Builder(this)
+                .enableAutoManage(this,this)
+                .addApi(Auth.GOOGLE_SIGN_IN_API,googleSignInOptions)
+                .build();
+        auth = FirebaseAuth.getInstance(); //파이어 베이스 인증 객체 초기화
 
-
-        social_login.setOnClickListener(new View.OnClickListener() {
-
-
+        google_login = findViewById(R.id.google_login);
+        google_login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                    if(UserApiClient.getInstance().isKakaoTalkLoginAvailable(IntroActivity.this))
-                    {
-                    UserApiClient.getInstance().loginWithKakaoTalk(IntroActivity.this, (oAuthtoken, error) ->
-                    {
-                        if (error != null) {
-                            Log.e(TAG, "로그인 실패", error);
-                        } else if (oAuthtoken != null) {
-                            Log.i(TAG, "로그인 성공(토큰) : " + oAuthtoken.getAccessToken());
-                        }
-
-                        UserApiClient.getInstance().me((user, meError) -> {
-                            if (meError != null) {
-                                Log.e(TAG, "사용자 정보 요청 실패", meError);
-                            } else {
-                                System.out.println("로그인 완료");
-                                Log.i(TAG, user.toString());
-                                {
-                                    Log.i(TAG, "사용자 정보 요청 성공" +
-                                            "\n회원번호: " + user.getId() +
-                                            "\n이메일: " + user.getKakaoAccount().getEmail());
-                                }
-                                Account user1 = user.getKakaoAccount();
-                                System.out.println("사용자 계정" + user1);
-                                Intent intent =new Intent(getApplicationContext(), SelectActivity.class);
-                                startActivity(intent);
-                            }
-                            return null;
-                        });
-
-                        return null;
-                    });
-
-                }
-                    else {
-                        UserApiClient.getInstance().loginWithKakaoAccount(IntroActivity.this, (oAuthtoken, error) ->
-                        {
-                            if (error != null) {
-                                Log.e(TAG, "로그인 실패", error);
-                            } else if (oAuthtoken != null) {
-                                Log.i(TAG, "로그인 성공(토큰) : " + oAuthtoken.getAccessToken());
-                            }
-
-                            UserApiClient.getInstance().me((user, meError) -> {
-                                if (meError != null) {
-                                    Log.e(TAG, "사용자 정보 요청 실패", meError);
-                                } else {
-                                    System.out.println("로그인 완료");
-                                    Log.i(TAG, user.toString());
-                                    {
-                                        Log.i(TAG, "사용자 정보 요청 성공" +
-                                                "\n회원번호: " + user.getId() +
-                                                "\n이메일: " + user.getKakaoAccount().getEmail());
-                                    }
-                                    Account user1 = user.getKakaoAccount();
-                                    System.out.println("사용자 계정" + user1);
-                                    Intent intent =new Intent(getApplicationContext(), SelectActivity.class);
-                                    startActivity(intent);
-                                }
-                                return null;
-                            });
-
-                            return null;
-                        });
-
-                    }
-
-                    }
-            });
+                Intent intent =Auth.GoogleSignInApi.getSignInIntent(googleApiClient);
+                startActivityForResult(intent,REQ_SIGN_GOOGLE);
+            }
+        });
 
     }
 
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) { //구글 로그인 인증을 요청 했을떄 결과 값을 되돌려 받는곳
+        super.onActivityResult(requestCode, resultCode, data);
+        if(requestCode ==REQ_SIGN_GOOGLE){
+            GoogleSignInResult result =Auth.GoogleSignInApi.getSignInResultFromIntent(data);
+            if(result.isSuccess() ==true){ //인증결과가 성공일
+                GoogleSignInAccount account = result.getSignInAccount();// account 라는 데이터는 구글로그인 정보를 담고있음 (닉네임,프로필,주소등)
+                resultLogin(account); //로그인 결과 값 출력 수행 메소드
 
-
-
-    private void getHashKey(){
-        PackageInfo packageInfo = null;
-        try {
-            packageInfo = getPackageManager().getPackageInfo(getPackageName(), PackageManager.GET_SIGNATURES);
-        } catch (PackageManager.NameNotFoundException e) {
-            e.printStackTrace();
-        }
-        if (packageInfo == null)
-            Log.e("KeyHash", "KeyHash:null");
-
-        for (Signature signature : packageInfo.signatures) {
-            try {
-                MessageDigest md = MessageDigest.getInstance("SHA");
-                md.update(signature.toByteArray());
-                Log.e("KeyHash", Base64.encodeToString(md.digest(), Base64.DEFAULT));
-            } catch (NoSuchAlgorithmException e) {
-                Log.e("KeyHash", "Unable to get MessageDigest. signature=" + signature, e);
             }
         }
+    }
+
+    private void resultLogin(GoogleSignInAccount account) {
+        AuthCredential credential = GoogleAuthProvider.getCredential(account.getIdToken(), null);
+        auth.signInWithCredential(credential)
+                .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
+                    @Override
+                    public void onComplete(@NonNull Task<AuthResult> task) {
+                        if(task.isSuccessful()){//로그인 성공
+                            Toast.makeText(IntroActivity.this,"로그인 성공",Toast.LENGTH_SHORT).show();
+                            Intent intent = new Intent(getApplicationContext(),SelectActivity.class);
+                            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                            intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                            intent.putExtra("nickname",account.getDisplayName());
+
+                            startActivity(intent);
+                        } else{
+                            Toast.makeText(IntroActivity.this,"로그인 실",Toast.LENGTH_SHORT).show();
+
+                        }
+                    }
+                });
+    }
+
+
+    @Override
+    public void onConnectionFailed(@NonNull ConnectionResult connectionResult) {
+
     }
 }
