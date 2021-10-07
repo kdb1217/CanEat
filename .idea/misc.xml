@@ -3,8 +3,6 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Users/tomat/AndroidStudioProjects/CanEat/app/src/main/res/layout/activity_intro.xml" value="0.17806484295845998" />
-        <entry key="..\:/Users/tomat/AndroidStudioProjects/CanEat/app/src/main/res/layout/main_page.xml" value="0.33" />
         <entry key="app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.24635416666666668" />
         <entry key="app/src/main/res/drawable/caneatmyinfobutton.xml" value="0.2484375" />
         <entry key="app/src/main/res/drawable/ic_launcher_background.xml" value="0.24635416666666668" />
@@ -15,15 +13,15 @@
         <entry key="app/src/main/res/drawable/save_button.xml" value="0.4197916666666667" />
         <entry key="app/src/main/res/drawable/toolbar.xml" value="0.4197916666666667" />
         <entry key="app/src/main/res/drawable/topbar.xml" value="0.4197916666666667" />
-        <entry key="app/src/main/res/layout/activity_intro.xml" value="0.24704203875120365" />
+        <entry key="app/src/main/res/layout/activity_intro.xml" value="0.3501597551542736" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.18178692718670048" />
-        <entry key="app/src/main/res/layout/main_page.xml" value="0.4053163991958276" />
-        <entry key="app/src/main/res/layout/myinfo.xml" value="0.2992767451924555" />
-        <entry key="app/src/main/res/layout/register_allergic.xml" value="0.29966094155700684" />
+        <entry key="app/src/main/res/layout/main_page.xml" value="0.48413181493402047" />
+        <entry key="app/src/main/res/layout/myinfo.xml" value="0.29583266460552643" />
+        <entry key="app/src/main/res/layout/register_allergic.xml" value="0.4413265306122449" />
         <entry key="app/src/main/res/layout/register_disease.xml" value="0.438871473354232" />
         <entry key="app/src/main/res/layout/register_ingredient.xml" value="0.1875" />
         <entry key="app/src/main/res/layout/register_religion.xml" value="0.3626924902915011" />
-        <entry key="app/src/main/res/layout/register_vegan.xml" value="0.3446267969638272" />
+        <entry key="app/src/main/res/layout/register_vegan.xml" value="0.5970465098563507" />
         <entry key="app/src/main/res/layout/select_page.xml" value="0.2616856434599934" />
         <entry key="app/src/main/res/layout/toolbar.xml" value="0.3473731884057971" />
         <entry key="app/src/main/res/menu/maintoolbar.xml" value="0.2296875" />

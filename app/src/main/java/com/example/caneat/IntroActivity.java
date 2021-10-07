@@ -29,6 +29,7 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthCredential;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.GoogleAuthProvider;
 
 import java.security.MessageDigest;
@@ -69,6 +70,7 @@ public class IntroActivity  extends AppCompatActivity implements GoogleApiClient
         });
 
     }
+
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) { //구글 로그인 인증을 요청 했을떄 결과 값을 되돌려 받는곳

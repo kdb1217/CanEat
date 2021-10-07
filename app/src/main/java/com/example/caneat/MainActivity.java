@@ -3,6 +3,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.provider.MediaStore;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -24,6 +25,14 @@ public class MainActivity extends AppCompatActivity {
         StorageReference storageRef = storage.getReference();
 
 
+        Button My_info = (Button) findViewById(R.id.myinfo);
+        My_info.setOnClickListener(new View.OnClickListener() {
+
+            public void onClick(View view) {
+                Intent My_info = new Intent(getApplicationContext(),Myinfo_activity.class);
+                startActivity(My_info);
+            }
+        });
     }
 
     public void showCameraBtn(View view) {
@@ -31,4 +40,7 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
 
     }
+
+
+
 }
