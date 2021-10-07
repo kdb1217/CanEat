@@ -1,9 +1,11 @@
 package com.example.caneat;
 
+import android.accounts.Account;
 import android.content.Intent;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.content.pm.Signature;
+import android.net.Uri;
 import android.os.Bundle;
 import android.util.Base64;
 import android.util.Log;
@@ -31,6 +33,10 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.GoogleAuthProvider;
+import com.google.firebase.auth.UserInfo;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.firestore.auth.User;
 
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
@@ -97,8 +103,35 @@ public class IntroActivity  extends AppCompatActivity implements GoogleApiClient
                             intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
                             intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                             intent.putExtra("nickname",account.getDisplayName());
+                            intent.putExtra("email",account.getEmail());
 
                             startActivity(intent);
+
+
+
+
+                            FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+                            if (user != null) {
+                                for(UserInfo profile : user.getProviderData()) {
+                                    // Id of the provider (ex: google.com)
+                                    String providerId = profile.getProviderId();
+
+                                    // UID specific to the provider
+                                    String uid = profile.getUid();
+
+                                    // Name, email address, and profile photo Url
+                                    String name = profile.getDisplayName();
+                                    String email = profile.getEmail();
+
+                                    FirebaseDatabase database = FirebaseDatabase.getInstance();
+                                    DatabaseReference myRef = database.getReference("user-uid :"+user.getUid());
+                                    myRef.child("user-email").setValue(email);
+                                    myRef.child("user-name").setValue(name);
+                                }
+
+
+                            }
+
                         } else{
                             Toast.makeText(IntroActivity.this,"로그인 실",Toast.LENGTH_SHORT).show();
 
