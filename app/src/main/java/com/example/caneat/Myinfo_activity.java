@@ -2,25 +2,49 @@ package com.example.caneat;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.google.firebase.auth.FirebaseAuth;
+
 import org.w3c.dom.Text;
 
-public class Myinfo_activity extends AppCompatActivity {
+public class Myinfo_activity extends AppCompatActivity implements View.OnClickListener{
 
-    private TextView nameview;
+    private FirebaseAuth auth;
+    Button google_signout;
+
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.myinfo);
 
-        Intent intent =getIntent();
-        String nickName= intent.getStringExtra("nickname");
 
-        nameview=findViewById(R.id.nameview);
-        nameview.setText(nickName);
+
+        google_signout=findViewById(R.id.google_logout);
+        auth=FirebaseAuth.getInstance();
+        google_signout.setOnClickListener(this);
+
+
+
+
+
+
+    }
+    @Override
+    public void onClick(View view){
+        setGoogle_signout();
+    }
+
+
+
+    private  void setGoogle_signout(){
+        FirebaseAuth.getInstance().signOut();
+        finishAffinity();
     }
 }
-
