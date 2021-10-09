@@ -39,12 +39,14 @@ public class Myinfo_activity extends AppCompatActivity implements View.OnClickLi
     @Override
     public void onClick(View view){
         setGoogle_signout();
+        Intent google_signout =new Intent(getApplicationContext(),IntroActivity.class);
+        startActivity(google_signout);
     }
 
 
 
     private  void setGoogle_signout(){
         FirebaseAuth.getInstance().signOut();
-        finishAffinity();
+
     }
 }

@@ -9,8 +9,11 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-public class SelectActivity extends AppCompatActivity {
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
+public class SelectActivity extends AppCompatActivity {
+    public DatabaseReference CanEatdatabase;
     private  long backKeyPressedTime=0;
 
     private Toast toast;
