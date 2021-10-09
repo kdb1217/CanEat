@@ -3,6 +3,7 @@ package com.example.caneat;
 
 import android.content.Intent;
 
+import android.net.Uri;
 import android.os.Bundle;
 
 import android.util.Log;
@@ -28,12 +29,14 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.GoogleAuthProvider;
 
+import com.google.firebase.auth.UserInfo;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
 
-public class IntroActivity  extends AppCompatActivity  {
 
+public class IntroActivity  extends AppCompatActivity  {
+    public DatabaseReference CanEatDatabase;
     private static final String TAG = "GoogleActivity";
     private static final int RC_SIGN_IN = 9001;
 
@@ -45,8 +48,7 @@ public class IntroActivity  extends AppCompatActivity  {
 
 
     FirebaseDatabase database = FirebaseDatabase.getInstance();
-    DatabaseReference Userinfo= database.getReference();
-
+    DatabaseReference maindb= database.getReference();
 
 
 
@@ -116,6 +118,9 @@ public class IntroActivity  extends AppCompatActivity  {
                     Log.d(TAG,"signInWithCredential:success");
                     FirebaseUser user =auth.getCurrentUser();
                     updateUI(user);
+                    getProviderData();
+
+
                 }else{
                     Log.w(TAG,"signInWithCredential:failure", task.getException());
                     updateUI(null);
@@ -137,5 +142,33 @@ public class IntroActivity  extends AppCompatActivity  {
             finish();
         }
 
+    }
+
+    public void getProviderData() {
+        // [START get_provider_data]
+        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+        if (user != null) {
+            for (UserInfo profile : user.getProviderData()) {
+                // Id of the provider (ex: google.com)
+                String providerId = profile.getProviderId();
+
+                // UID specific to the provider
+                String uid = profile.getUid();
+
+                // Name, email address, and profile photo Url
+                String name = profile.getDisplayName();
+                String email = profile.getEmail();
+                Uri photoUrl = profile.getPhotoUrl();
+
+                User user_info =new User(email,name);
+
+                maindb.child("user").child("user uid: "+uid).setValue(user_info);
+
+
+
+
+            }
+        }
+        // [END get_provider_data]
     }
 }
