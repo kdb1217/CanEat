@@ -153,7 +153,7 @@ public class IntroActivity  extends AppCompatActivity  {
                 String providerId = profile.getProviderId();
 
                 // UID specific to the provider
-                String uid = profile.getUid();
+                String uid = user.getUid();
 
                 // Name, email address, and profile photo Url
                 String name = profile.getDisplayName();

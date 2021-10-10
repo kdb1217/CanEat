@@ -41,6 +41,7 @@ public class Myinfo_activity extends AppCompatActivity implements View.OnClickLi
         setGoogle_signout();
         Intent google_signout =new Intent(getApplicationContext(),IntroActivity.class);
         startActivity(google_signout);
+
     }
 
 
