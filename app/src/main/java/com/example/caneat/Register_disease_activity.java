@@ -6,13 +6,22 @@ import android.view.View;
 import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.RecyclerView;
+
+import java.util.List;
 
 public class Register_disease_activity extends AppCompatActivity {
+    List<com.example.caneat.allergic_info> allergic_info;
+    RecyclerView ingredientlistinfo;
+   
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.register_disease);
+
+
+
 
         Button My_info = (Button) findViewById(R.id.myinfo);
         My_info.setOnClickListener(new View.OnClickListener() {
@@ -23,5 +32,6 @@ public class Register_disease_activity extends AppCompatActivity {
             }
         });
     }
+
 }
 
