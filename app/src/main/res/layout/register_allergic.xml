@@ -11,10 +11,10 @@
         android:layout_width="match_parent"
         android:layout_height="60dp"
         android:layout_gravity="top"
-        android:background="@color/white"
+        android:background="@drawable/rectanglerlayout"
         tools:ignore="MissingConstraints"
         tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="2dp">
+        android:backgroundTint="@color/white">
 
         <ImageView
             android:layout_width="60dp"
@@ -80,7 +80,16 @@
                 android:background="@drawable/register_button"
                 android:text="선택완료"
                 android:textColor="@color/black" />
+
         </LinearLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/ingredientlistinfo"
+            />
+
 
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

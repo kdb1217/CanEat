@@ -1,10 +1,12 @@
 package com.example.caneat;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -41,6 +43,7 @@ public class Myinfo_activity extends AppCompatActivity implements View.OnClickLi
         setGoogle_signout();
         Intent google_signout =new Intent(getApplicationContext(),IntroActivity.class);
         startActivity(google_signout);
+
 
     }
 
