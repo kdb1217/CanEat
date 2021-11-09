@@ -1,6 +1,12 @@
 package com.example.caneat;
 
-public class allergic_info {
+import java.io.Serializable;
+
+public class allergic_info implements Serializable {
+
+    /**
+     *
+     */
     private String Allergic_ingredient;
     private String Allergic_name;
     boolean inSelected;

@@ -22,7 +22,7 @@ import com.google.firebase.database.ValueEventListener;
 import java.util.ArrayList;
 
 
-public class Register_allergic_activity extends AppCompatActivity {
+public class Register_allergic_activity extends AppCompatActivity implements OnItemClick{
     private RecyclerView ingredientlistinfo;
     private RecyclerView.LayoutManager layoutManager;
     private ArrayList<com.example.caneat.allergic_info> arrayList;
@@ -78,7 +78,9 @@ public class Register_allergic_activity extends AppCompatActivity {
     }
 
 
+    @Override
+    public void onClick(String value) {
 
-
+    }
 }
 

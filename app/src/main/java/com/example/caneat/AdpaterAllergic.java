@@ -1,5 +1,6 @@
 package com.example.caneat;
 
+import android.content.ClipData;
 import android.content.Context;
 
 import android.view.LayoutInflater;
@@ -46,8 +47,10 @@ public class AdpaterAllergic extends RecyclerView.Adapter<AdpaterAllergic.MyHold
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 Allergic_info.setInSelected(isChecked);
 
+
             }
         });
+
 
 
 
@@ -75,13 +78,13 @@ public class AdpaterAllergic extends RecyclerView.Adapter<AdpaterAllergic.MyHold
             this.ingredient_title =itemView.findViewById(R.id.ingredient_title);
             this.ingredient_content=itemView.findViewById(R.id.ingredient_content);
 
+
         }
     }
 
-
-
-
-
+    public ArrayList<allergic_info> getArrayList() {
+        return arrayList;
+    }
 }
 
 
