@@ -156,13 +156,13 @@ public class IntroActivity  extends AppCompatActivity  {
                 String uid = user.getUid();
 
                 // Name, email address, and profile photo Url
-                String name = profile.getDisplayName();
-                String email = profile.getEmail();
+                String email = profile.getDisplayName();
+                String name = profile.getEmail();
                 Uri photoUrl = profile.getPhotoUrl();
 
                 User user_info =new User(email,name);
 
-                maindb.child("user").child("user uid: "+uid).setValue(user_info);
+                maindb.child("user").child(uid).setValue(user_info);
 
 
 

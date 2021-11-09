@@ -7,7 +7,7 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="60dp"
+        android:layout_height="100dp"
         android:orientation="horizontal"
         android:background="@drawable/rectanglerlayout">
 
@@ -37,15 +37,16 @@
                 android:textColor="@color/black"
                 android:text="알러지 내용" />
 
+            <CheckBox
+                android:id="@+id/check_allergic"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:buttonTint="@color/black">
+            </CheckBox>
+
         </LinearLayout>
 
-        <CheckBox
-            android:id="@+id/check_allergic"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_gravity="center"
-            android:buttonTint="@color/black">
-        </CheckBox>
 
     </LinearLayout>
 
