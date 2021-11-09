@@ -54,21 +54,6 @@ public class SelectActivity extends AppCompatActivity {
 
 
 
-
-
-
-        Button dissease_Register_button = (Button) findViewById(R.id.disease_button);
-        dissease_Register_button.setOnClickListener(new View.OnClickListener() {
-
-            public void onClick(View view) {
-                Intent intent = new Intent(getApplicationContext(),Register_disease_activity.class);
-                startActivity(intent);
-
-
-            }
-        });
-
-
         Button allergic_Register_button = (Button) findViewById(R.id.allegric_button);
         allergic_Register_button.setOnClickListener(new View.OnClickListener() {
 
