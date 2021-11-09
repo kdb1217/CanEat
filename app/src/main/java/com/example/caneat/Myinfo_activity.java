@@ -84,10 +84,11 @@ public class Myinfo_activity extends AppCompatActivity implements View.OnClickLi
 
     @Override
     public void onMapReady(@NonNull NaverMap naverMap) {
+
         naverMap.setLocationSource(locationSource);
         naverMap.setLocationTrackingMode(LocationTrackingMode.Follow);
         this.naverMap = naverMap;
-        naverMap.setLocationSource(locationSource);
+
     }
 
 

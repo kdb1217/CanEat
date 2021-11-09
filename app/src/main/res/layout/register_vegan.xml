@@ -80,6 +80,12 @@
                 android:text="선택완료"
                 android:textColor="@color/black" />
         </LinearLayout>
+        <androidx.recyclerview.widget.RecyclerView
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/veganlistinfo"
+            />
 
     </LinearLayout>
 
