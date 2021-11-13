@@ -25,10 +25,20 @@ public class Register_vegan_activity extends AppCompatActivity {
     private RecyclerView.Adapter adapter;
     private FirebaseDatabase database;
     private DatabaseReference databaseReference;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.register_vegan);
+        Button button=findViewById(R.id.button);
+
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent Succescomplete = new Intent(getApplicationContext(),SelectActivity.class);
+                startActivity(Succescomplete);
+            }
+        });
 
         veganlistinfo=findViewById(R.id.veganlistinfo);
         veganlistinfo.setHasFixedSize(true);

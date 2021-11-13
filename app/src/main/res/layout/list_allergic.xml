@@ -13,11 +13,10 @@
 
 
         <LinearLayout
-            android:layout_width="300dp"
-            android:layout_height="wrap_content"
-            android:layout_marginRight="50dp"
+            android:layout_width="210dp"
+            android:layout_height="match_parent"
+            android:layout_marginRight="30dp"
             android:orientation="vertical">
-
 
 
             <TextView
@@ -26,7 +25,7 @@
                 android:layout_height="20dp"
                 android:layout_margin="5dp"
                 android:text="알러지 이름"
-                android:textColor="@color/black"/>
+                android:textColor="@color/black" />
 
 
             <TextView
@@ -34,18 +33,21 @@
                 android:layout_width="wrap_content"
                 android:layout_height="30dp"
                 android:layout_margin="5dp"
-                android:textColor="@color/black"
-                android:text="알러지 내용" />
-
-            <CheckBox
-                android:id="@+id/check_allergic"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_gravity="center"
-                android:buttonTint="@color/black">
-            </CheckBox>
+                android:text="알러지 내용"
+                android:textColor="@color/black" />
 
         </LinearLayout>
+
+        <Button
+
+            android:id="@+id/check_allergic"
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center"
+            android:layout_marginRight="30dp"
+            android:background="@drawable/roundlayout"
+            android:text="등록하기"
+            android:textColor="@color/black"></Button>
 
 
     </LinearLayout>

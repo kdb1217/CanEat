@@ -41,8 +41,16 @@ public class Register_allergic_activity extends AppCompatActivity implements OnI
         layoutManager = new LinearLayoutManager(this);
         ingredientlistinfo.setLayoutManager(layoutManager);
         arrayList=new ArrayList<>();
-
+        Button button=findViewById(R.id.button);
         database =FirebaseDatabase.getInstance();
+
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent Succescomplete = new Intent(getApplicationContext(),SelectActivity.class);
+                startActivity(Succescomplete);
+            }
+        });
 
         databaseReference=database.getReference("allergic_info");
         databaseReference.addListenerForSingleValueEvent(new ValueEventListener() {
