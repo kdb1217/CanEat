@@ -9,15 +9,9 @@ public class allergic_info implements Serializable {
      */
     private String Allergic_ingredient;
     private String Allergic_name;
-    boolean inSelected;
 
-    public void setInSelected(boolean inSelected) {
-        this.inSelected = inSelected;
-    }
 
-    public boolean isInSelected() {
-        return inSelected;
-    }
+
 
     public allergic_info(){}
 
