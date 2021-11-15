@@ -77,7 +77,7 @@ public class AdapterReligion extends RecyclerView.Adapter<AdapterReligion.AHolde
                     int pos= getAdapterPosition();
                     if(pos!=RecyclerView.NO_POSITION){
                         religion_info Religion_info= arrayList.get(pos);
-                        maindb.child(uid).child("myreligion_info").child(Religion_info.getReligion_name()).setValue(Religion_info.getReligion_ingredient());
+                        maindb.child(uid).child("myreligion_info").setValue(Religion_info);
                     }
                 }
             });

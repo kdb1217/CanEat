@@ -50,53 +50,37 @@
 
 
         <LinearLayout
-            android:id="@+id/ingredient_state"
-            android:layout_width="match_parent"
-            android:layout_height="100dp"
-            android:layout_marginLeft="40dp"
-            android:layout_marginRight="40dp"
-            android:layout_marginBottom="20dp"
-            android:background="@drawable/roundlayout"
-            android:orientation="vertical">
-
-            <Button
-                android:id="@+id/ingred"
-                android:layout_width="104dp"
-                android:layout_height="60dp"
-                android:layout_gravity="right"
-                android:layout_marginTop="20dp"
-                android:layout_marginRight="15dp"
-                android:layout_marginBottom="30dp"
-                android:layout_weight="1"
-                android:height="1dp"
-                android:background="@drawable/register_button"
-                android:text="@string/change"
-                android:textColor="#000000" />
-        </LinearLayout>
-
-        <LinearLayout
             android:id="@+id/religion_state"
             android:layout_width="match_parent"
             android:layout_height="100dp"
             android:layout_marginLeft="40dp"
             android:layout_marginRight="40dp"
-            android:layout_marginBottom="20dp"
+            android:layout_marginBottom="50dp"
             android:background="@drawable/roundlayout"
-            android:orientation="vertical">
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="210dp"
+                android:layout_height="43dp"
+                android:layout_gravity="center"
+                android:text="비건 변경하기"
+                android:textColor="@color/black"
+                android:paddingLeft="10dp">
+            </TextView>
 
             <Button
-                android:id="@+id/religion_changebutton"
-                android:layout_width="104dp"
-                android:layout_height="60dp"
-                android:layout_gravity="right"
-                android:layout_marginTop="20dp"
-                android:layout_marginRight="15dp"
-                android:layout_marginBottom="30dp"
-                android:layout_weight="1"
-                android:height="1dp"
-                android:background="@drawable/register_button"
-                android:text="@string/change"
-                android:textColor="#000000" />
+
+                android:id="@+id/vegan_change"
+                android:layout_width="100dp"
+                android:layout_height="50dp"
+                android:layout_gravity="center"
+                android:layout_marginRight="30dp"
+
+                android:background="@drawable/roundlayout"
+                android:text="변경하기"
+                android:textColor="@color/black">
+            </Button>
+
         </LinearLayout>
 
         <LinearLayout
@@ -105,23 +89,31 @@
             android:layout_height="100dp"
             android:layout_marginLeft="40dp"
             android:layout_marginRight="40dp"
-            android:layout_marginBottom="20dp"
+            android:layout_marginBottom="50dp"
             android:background="@drawable/roundlayout"
-            android:orientation="vertical">
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="210dp"
+                android:layout_height="43dp"
+                android:layout_gravity="center"
+                android:text="종교 변경하기"
+                android:textColor="@color/black"
+                android:paddingLeft="10dp">
+            </TextView>
 
             <Button
-                android:id="@+id/allegric_changebutton"
-                android:layout_width="104dp"
-                android:layout_height="60dp"
-                android:layout_gravity="right"
-                android:layout_marginTop="20dp"
-                android:layout_marginRight="15dp"
-                android:layout_marginBottom="30dp"
-                android:layout_weight="1"
-                android:height="1dp"
-                android:background="@drawable/register_button"
-                android:text="@string/change"
-                android:textColor="#000000" />
+
+                android:id="@+id/change_religion"
+                android:layout_width="100dp"
+                android:layout_height="50dp"
+                android:layout_gravity="center"
+                android:layout_marginRight="30dp"
+
+                android:background="@drawable/roundlayout"
+                android:text="변경하기"
+                android:textColor="@color/black">
+            </Button>
         </LinearLayout>
 
         <LinearLayout
@@ -130,23 +122,31 @@
             android:layout_height="100dp"
             android:layout_marginLeft="40dp"
             android:layout_marginRight="40dp"
-            android:layout_marginBottom="20dp"
+            android:layout_marginBottom="50dp"
             android:background="@drawable/roundlayout"
-            android:orientation="vertical">
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="210dp"
+                android:layout_height="43dp"
+                android:layout_gravity="center"
+                android:text="알레르기 변경하기"
+                android:textColor="@color/black"
+                android:paddingLeft="10dp">
+            </TextView>
 
             <Button
-                android:id="@+id/vegan_changebutton"
-                android:layout_width="104dp"
-                android:layout_height="60dp"
-                android:layout_gravity="right"
-                android:layout_marginTop="20dp"
-                android:layout_marginRight="15dp"
-                android:layout_marginBottom="30dp"
-                android:layout_weight="1"
-                android:height="1dp"
-                android:background="@drawable/register_button"
-                android:text="@string/change"
-                android:textColor="#000000" />
+
+                android:id="@+id/change_allergic"
+                android:layout_width="100dp"
+                android:layout_height="50dp"
+                android:layout_gravity="center"
+                android:layout_marginRight="30dp"
+
+                android:background="@drawable/roundlayout"
+                android:text="변경하기"
+                android:textColor="@color/black"
+                >
+            </Button>
         </LinearLayout>
 
         <LinearLayout
@@ -156,23 +156,30 @@
             android:layout_marginLeft="40dp"
             android:layout_marginTop="10dp"
             android:layout_marginRight="40dp"
-            android:layout_marginBottom="20dp"
+            android:layout_marginBottom="40dp"
             android:background="@drawable/roundlayout"
-            android:orientation="vertical">
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="210dp"
+                android:layout_height="43dp"
+                android:layout_gravity="center"
+                android:text="못먹는 성분 변경하기"
+                android:textColor="@color/black"
+                android:paddingLeft="10dp">
+            </TextView>
 
             <Button
-                android:id="@+id/disease_changebutton"
-                android:layout_width="104dp"
-                android:layout_height="60dp"
-                android:layout_gravity="right"
-                android:layout_marginTop="20dp"
-                android:layout_marginRight="15dp"
-                android:layout_marginBottom="30dp"
-                android:layout_weight="1"
-                android:height="1dp"
-                android:background="@drawable/register_button"
-                android:text="@string/change"
-                android:textColor="#000000" />
+
+                android:id="@+id/change_ingredient"
+                android:layout_width="100dp"
+                android:layout_height="50dp"
+                android:layout_gravity="center"
+                android:layout_marginRight="30dp"
+
+                android:background="@drawable/roundlayout"
+                android:text="변경하기"
+                android:textColor="@color/black">
+            </Button>
         </LinearLayout>
     </LinearLayout>
 

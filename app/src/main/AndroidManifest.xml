@@ -53,9 +53,7 @@
         <activity android:name=".SelectActivity">
 
         </activity>
-        <activity android:name=".Register_disease_activity">
 
-        </activity>
         <activity android:name=".Register_allergic_activity">
 
         </activity>
@@ -73,6 +71,16 @@
         <activity android:name=".Myinfo_activity">
 
         </activity>
+        <activity android:name=".Change_religion_activity"
+        >
+        </activity>
+        <activity android:name=".Change_vegan_activity">
+        </activity>
+        <activity android:name=".Change_allergic_activity">
+        </activity>
+        <activity android:name=".Change_ingredient_activity">
+        </activity>
+
 
     </application>
 

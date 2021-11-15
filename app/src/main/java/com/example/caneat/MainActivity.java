@@ -46,6 +46,31 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         picture_button = findViewById(R.id.picture_button);
         picture_button.setOnClickListener(this);
 
+        Button change_allergic=findViewById(R.id.change_allergic);
+        change_allergic.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent change_allergic=new Intent(getApplicationContext(),Change_allergic_activity.class);
+                startActivity(change_allergic);
+            }
+        });
+        Button change_religion=(Button) findViewById(R.id.change_religion);
+        change_religion.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent change_religion=new Intent(getApplicationContext(),Change_religion_activity.class);
+                startActivity(change_religion);
+            }
+        });
+
+        Button vegan_change=findViewById(R.id.vegan_change);
+        vegan_change.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent vegan_change=new Intent(getApplicationContext(),Change_vegan_activity.class);
+                startActivity(vegan_change);
+            }
+        });
 
         Button My_info = (Button) findViewById(R.id.myinfo);
         My_info.setOnClickListener(new View.OnClickListener() {
@@ -55,6 +80,16 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 startActivity(My_info);
             }
         });
+
+        Button change_ingredient=findViewById(R.id.change_ingredient);
+        change_ingredient.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent change_ingredient =new Intent(getApplicationContext(),Change_ingredient_activity.class);
+                startActivity(change_ingredient);
+            }
+        });
+
         FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
         String uid = user.getUid();
         Log.d("로그확인",uid);
