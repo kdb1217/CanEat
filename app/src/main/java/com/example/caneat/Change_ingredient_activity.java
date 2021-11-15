@@ -2,8 +2,6 @@ package com.example.caneat;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.text.Editable;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -16,7 +14,7 @@ import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
-public class Register_ingredient_activity extends AppCompatActivity {
+public class Change_ingredient_activity extends AppCompatActivity {
     public int i=1;
     FirebaseDatabase database = FirebaseDatabase.getInstance();
     DatabaseReference maindb= database.getReference("user");
@@ -26,9 +24,9 @@ public class Register_ingredient_activity extends AppCompatActivity {
     private Toast toast;
     Button button;
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.register_ingredient);
+        setContentView(R.layout.change_ingredient);
 
         edit_ingredient = findViewById(R.id.edit_ingredient);
         register=findViewById(R.id.register);
@@ -38,28 +36,24 @@ public class Register_ingredient_activity extends AppCompatActivity {
             public void onClick(View v) {
                 String datanum=Integer.toString(i);
                 ingredient=edit_ingredient.getText().toString();
-                ingredient=edit_ingredient.getText().toString();
                 FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
                 String uid=user.getUid();
-                maindb.child(uid).child("data").setValue(ingredient);
+                maindb.child(uid).child("myingredient").child(datanum).setValue(ingredient);
                 toast=Toast.makeText(getApplicationContext(),"등록이 완료 되었습니다.",Toast.LENGTH_SHORT);
                 toast.show();
-
-
-
+                i++;
 
 
 
             }
         });
 
-
         button=findViewById(R.id.button);
 
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent button=new Intent(getApplicationContext(),SelectActivity.class);
+                Intent button=new Intent(getApplicationContext(),MainActivity.class);
                 startActivity(button);
             }
         });

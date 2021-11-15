@@ -5,7 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.CheckBox;
+
 import android.widget.CompoundButton;
 import android.widget.TextView;
 
@@ -69,7 +69,7 @@ public class AdapterVegan extends RecyclerView.Adapter<AdapterVegan.VHolder> {
                     int pos= getAdapterPosition();
                     if (pos!=RecyclerView.NO_POSITION){
                         vegan_info Vegan_info= arrayList1.get(pos);
-                        maindb.child(uid).child("myvegan_info").child(Vegan_info.getVegan_name()).setValue(Vegan_info.getVegan_ingredient());
+                        maindb.child(uid).child("myvegan_info").setValue(Vegan_info);
                     }
                 }
             });

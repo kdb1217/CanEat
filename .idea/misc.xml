@@ -11,6 +11,7 @@
         <entry key="app/src/main/res/drawable/myiconbuttpn.xml" value="0.4197916666666667" />
         <entry key="app/src/main/res/drawable/rectanglerlayout.xml" value="0.20677083333333332" />
         <entry key="app/src/main/res/drawable/register_button.xml" value="0.4197916666666667" />
+        <entry key="app/src/main/res/drawable/retangle.xml" value="0.12302631578947368" />
         <entry key="app/src/main/res/drawable/roundlayout.xml" value="0.12447916666666667" />
         <entry key="app/src/main/res/drawable/save_button.xml" value="0.4197916666666667" />
         <entry key="app/src/main/res/drawable/toolbar.xml" value="0.4197916666666667" />
@@ -20,12 +21,13 @@
         <entry key="app/src/main/res/layout/afterlogin_intro.xml" value="0.190625" />
         <entry key="app/src/main/res/layout/afterlogin_iro.xml" value="0.24230072463768115" />
         <entry key="app/src/main/res/layout/allergic_text.xml" value="0.4036458333333333" />
-        <entry key="app/src/main/res/layout/change_allergic.xml" value="0.14210526315789473" />
-        <entry key="app/src/main/res/layout/change_religion.xml" value="0.14210526315789473" />
+        <entry key="app/src/main/res/layout/change_allergic.xml" value="0.33440514469453375" />
+        <entry key="app/src/main/res/layout/change_ingredient.xml" value="0.3860828370702235" />
+        <entry key="app/src/main/res/layout/change_religion.xml" value="0.3222540989167391" />
         <entry key="app/src/main/res/layout/change_vegan.xml" value="0.14210526315789473" />
         <entry key="app/src/main/res/layout/ingredientlistinfo.xml" value="0.4036458333333333" />
         <entry key="app/src/main/res/layout/list_allergic.xml" value="0.23911111642125082" />
-        <entry key="app/src/main/res/layout/main_page.xml" value="0.16181453568367438" />
+        <entry key="app/src/main/res/layout/main_page.xml" value="0.2488637213823239" />
         <entry key="app/src/main/res/layout/myinfo.xml" value="0.29583266460552643" />
         <entry key="app/src/main/res/layout/qweqwe.xml" value="0.24010416666666667" />
         <entry key="app/src/main/res/layout/register_allergic.xml" value="0.19207450286797223" />
@@ -33,6 +35,7 @@
         <entry key="app/src/main/res/layout/register_ingredient.xml" value="0.2713467017803773" />
         <entry key="app/src/main/res/layout/register_religion.xml" value="0.3626924902915011" />
         <entry key="app/src/main/res/layout/register_vegan.xml" value="0.37430555555555556" />
+        <entry key="app/src/main/res/layout/remove_allergic.xml" value="0.35587188612099646" />
         <entry key="app/src/main/res/layout/select_page.xml" value="0.2616856434599934" />
         <entry key="app/src/main/res/layout/toolbar.xml" value="0.3473731884057971" />
         <entry key="app/src/main/res/menu/maintoolbar.xml" value="0.2296875" />

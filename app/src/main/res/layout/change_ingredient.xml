@@ -11,10 +11,8 @@
         android:layout_width="match_parent"
         android:layout_height="60dp"
         android:layout_gravity="top"
-        android:background="@drawable/rectanglerlayout"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="0dp"
-        android:backgroundTint="@color/white">
+        android:background="@color/white"
+        tools:ignore="MissingConstraints">
 
         <ImageView
             android:layout_width="60dp"
@@ -41,11 +39,11 @@
 
     <LinearLayout
         android:layout_width="match_parent"
+        android:layout_marginTop="100dp"
         android:layout_height="match_parent"
         android:layout_marginLeft="30dp"
         android:layout_marginRight="30dp"
         android:layout_marginBottom="80dp"
-        android:layout_marginTop="100dp"
         android:background="@drawable/roundlayout"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -54,7 +52,6 @@
         app:layout_constraintTop_toBottomOf="@+id/toolbar">
 
         <LinearLayout
-
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:layout_marginTop="10dp"
@@ -69,7 +66,7 @@
                 android:paddingLeft="30dp"
                 android:paddingTop="15dp"
                 android:paddingBottom="0dp"
-                android:text="알레르기 추가등록하기"
+                android:text="못먹는 성분 등록하기"
                 android:textColor="#000000" />
 
             <Button
@@ -84,54 +81,36 @@
 
         </LinearLayout>
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/allergiclistinfo"
-            android:layout_width="match_parent"
-            android:layout_height="272dp"
-            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
-
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:layout_marginTop="50dp"
-            android:orientation="horizontal">
+            android:layout_height="60dp">
 
-            <TextView
-                android:id="@+id/removetextView"
-                android:layout_width="140dp"
+            <EditText
+                android:id="@+id/edit_ingredient"
+                android:layout_width="241dp"
                 android:layout_height="match_parent"
                 android:layout_gravity="left"
-                android:layout_weight="1"
+                android:hint="성분을 입력하세요"
                 android:paddingLeft="30dp"
                 android:paddingTop="15dp"
                 android:paddingBottom="0dp"
-                android:text="알레르기 삭제하기"
-                android:textColor="#000000" />
+                android:textSize="15dp"
+                android:textColor="@color/black"
+                android:textColorHint="@color/black"></EditText>
 
             <Button
-                android:id="@+id/removebutton"
-                android:layout_width="0dp"
-                android:layout_height="48dp"
+                android:id="@+id/register"
+                android:layout_width="100dp"
+                android:layout_height="50dp"
+                android:layout_gravity="center"
                 android:layout_marginRight="10dp"
-                android:layout_weight="1"
-                android:background="@drawable/register_button"
-                android:text="삭제완료"
-                android:textColor="@color/black" />
-
+                android:background="@drawable/roundlayout"
+                android:text="등록하기"
+                android:textColor="@color/black"></Button>
         </LinearLayout>
-
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/removelistinfo"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
-
-
-
-
 
     </LinearLayout>
 
-    
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
