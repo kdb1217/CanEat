@@ -36,8 +36,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     Button picture_button;
     FirebaseDatabase database;
     List<User> mUser;
+    public String ing;
+    public String[] ning;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
+
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main_page);
 
@@ -93,23 +99,22 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
         String uid = user.getUid();
         Log.d("로그확인",uid);
-        DatabaseReference mydb = database.getReference("user");
+        DatabaseReference mydb = database.getReference("user").child(uid);
         mUser = new ArrayList<>();
 
-        /*
-        mydb.child(uid).addValueEventListener(new ValueEventListener() {
+        mydb.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 mUser.clear();
                 User user = dataSnapshot.getValue(User.class);
                 mUser.add(user);
-                String abc12 = mUser.get(0).getData();
-                Log.d("로그확인",abc12);
-                String ss ="banana";
-                if(abc12.contains(ss)) {
-                    Log.d("로그확인","문자열 포함");
-                }else {
-                    Log.d("로그확인","문자열 포함안됨");
+                ing = mUser.get(0).getIngredient();
+                ning =ing.split("@");
+                String str="감자, 돼지고기, 당근, 양파, 새우";
+                for(String s : ning){
+                    if(str.contains(s)){
+                        Log.d("성분검출",s);
+                    }
                 }
             }
 
@@ -119,7 +124,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             }
         });
 
-         */
 
 
     }

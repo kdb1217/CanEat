@@ -36,14 +36,6 @@ import com.google.firebase.database.FirebaseDatabase;
 
 
 public class IntroActivity  extends AppCompatActivity  {
-    public int i=0;
-
-    public int getI() {
-        return i;
-    }
-    public IntroActivity(){
-        this.i=0;
-    }
 
     public DatabaseReference CanEatDatabase;
     private static final String TAG = "GoogleActivity";
