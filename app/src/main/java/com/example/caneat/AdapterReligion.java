@@ -18,8 +18,18 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 
 public class AdapterReligion extends RecyclerView.Adapter<AdapterReligion.AHolder> {
+
+    Map<String, Object> updateData = new HashMap<>();
+    public String value;
+    public String rname;
+    public Map<String, Object> getUpdateData() {
+        updateData.put("religion",value);
+        return updateData;
+    }
 
     final ArrayList<religion_info>arrayList;
     final Context context;
@@ -77,6 +87,9 @@ public class AdapterReligion extends RecyclerView.Adapter<AdapterReligion.AHolde
                     int pos= getAdapterPosition();
                     if(pos!=RecyclerView.NO_POSITION){
                         religion_info Religion_info= arrayList.get(pos);
+                        rname=Religion_info.getReligion_name();
+                        updateData.put("religion",rname);
+                        maindb.child(uid).updateChildren(updateData);
                         maindb.child(uid).child("myreligion_info").setValue(Religion_info);
                     }
                 }

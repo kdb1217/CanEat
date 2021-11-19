@@ -5,6 +5,12 @@ public class User {
     public String email;
     public String uid;
     public String ingredient;
+    public String vegan;
+    public String religion;
+
+    public String getReligion() { return religion; }
+
+    public String getVegan() { return vegan; }
 
     public String getIngredient() {
         return ingredient;

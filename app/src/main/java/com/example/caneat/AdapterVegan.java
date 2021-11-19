@@ -18,8 +18,18 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 
 public class AdapterVegan extends RecyclerView.Adapter<AdapterVegan.VHolder> {
+    Map<String, Object> updateData = new HashMap<>();
+    public String value;
+    public String vname;
+    public Map<String, Object> getUpdateData() {
+        updateData.put("vegan",value);
+        return updateData;
+    }
+
     final ArrayList<vegan_info> arrayList1;
     final Context context;
 
@@ -69,6 +79,9 @@ public class AdapterVegan extends RecyclerView.Adapter<AdapterVegan.VHolder> {
                     int pos= getAdapterPosition();
                     if (pos!=RecyclerView.NO_POSITION){
                         vegan_info Vegan_info= arrayList1.get(pos);
+                        vname=Vegan_info.getVegan_name();
+                        updateData.put("vegan",vname);
+                        maindb.child(uid).updateChildren(updateData);
                         maindb.child(uid).child("myvegan_info").setValue(Vegan_info);
                     }
                 }
