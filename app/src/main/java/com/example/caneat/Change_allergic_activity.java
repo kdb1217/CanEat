@@ -35,11 +35,20 @@ public class Change_allergic_activity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.change_allergic);
         Button button=findViewById(R.id.button);
+        Button removebutton=findViewById(R.id.removebutton);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent Succescomplete = new Intent(getApplicationContext(),MainActivity.class);
                 startActivity(Succescomplete);
+            }
+        });
+
+        removebutton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent remove=new Intent(getApplicationContext(),MainActivity.class);
+                startActivity(remove);
             }
         });
 

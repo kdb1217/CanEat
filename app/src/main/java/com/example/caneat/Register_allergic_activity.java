@@ -51,7 +51,14 @@ public class Register_allergic_activity extends AppCompatActivity implements OnI
                 startActivity(Succescomplete);
             }
         });
+        Button My_info = (Button) findViewById(R.id.myinfo);
+        My_info.setOnClickListener(new View.OnClickListener() {
 
+            public void onClick(View view) {
+                Intent My_info = new Intent(getApplicationContext(),Myinfo_activity.class);
+                startActivity(My_info);
+            }
+        });
         databaseReference=database.getReference("allergic_info");
         databaseReference.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
