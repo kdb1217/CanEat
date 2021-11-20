@@ -66,6 +66,16 @@ public class Change_vegan_activity extends AppCompatActivity {
             }
         });
 
+        Button button=findViewById(R.id.button);
+
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent Succescomplete = new Intent(getApplicationContext(),MainActivity.class);
+                startActivity(Succescomplete);
+            }
+        });
+
         adapter=new AdapterVegan(arrayList,this);
         veganlistinfo.setAdapter(adapter);
     }

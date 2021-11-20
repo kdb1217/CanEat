@@ -107,6 +107,7 @@ public class AdapterRallergic extends RecyclerView.Adapter<AdapterRallergic.RHol
                   int pos =getAdapterPosition();
                   if(pos!=RecyclerView.NO_POSITION){
                       myallergic_info Myallergic_info=arrayList.get(pos);
+
                         switch (Myallergic_info.getAllergic_ingredient()){
                               case "소고기":
                                   ning=ing.replace(("@"+Myallergic_info.getAllergic_ingredient()),"");

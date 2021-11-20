@@ -35,7 +35,7 @@ public class Change_religion_activity extends AppCompatActivity {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent Succescomplete = new Intent(getApplicationContext(),SelectActivity.class);
+                Intent Succescomplete = new Intent(getApplicationContext(),MainActivity.class);
                 startActivity(Succescomplete);
             }
         });
