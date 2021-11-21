@@ -1,13 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="com.example.caneat" >
+    package="com.example.caneat">
+
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.CAMERA"/>
-    <uses-feature android:name="android.hardware.camera"/>
-    <uses-feature android:name="android.hardware.camera.autofocus"/>
+    <uses-permission android:name="android.permission.CAMERA" />
+
+    <uses-feature android:name="android.hardware.camera" />
+    <uses-feature android:name="android.hardware.camera.autofocus" />
 
     <application
         android:allowBackup="true"
@@ -15,73 +17,39 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.AppCompat.NoActionBar"
-        >
+        android:theme="@style/Theme.AppCompat.NoActionBar">
+
         <meta-data
             android:name="com.naver.maps.map.CLIENT_ID"
             android:value="fq6m1c8f92" />
 
-
-
-        <activity android:name=".Capture"
+        <activity
+            android:name=".Capture"
             android:screenOrientation="fullSensor"
             android:stateNotNeeded="true"
             android:windowSoftInputMode="stateAlwaysHidden"
-            tools:ignore="Instantiatable">
-
-        </activity>
-
+            tools:ignore="Instantiatable"></activity>
         <activity
             android:name=".IntroActivity"
-            android:exported="true" >
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".AfterLogin_introactivity">
-
-        </activity>
-
-        <activity android:name=".MainActivity">
-
-        </activity>
-
-
-
-        <activity android:name=".SelectActivity">
-
-        </activity>
-
-        <activity android:name=".Register_allergic_activity">
-
-        </activity>
-
-        <activity android:name=".Register_vegan_activity">
-        </activity>
-
-        <activity android:name=".Register_ingredient_activity">
-        </activity>
-
-        <activity android:name=".Register_religion_activity">
-
-        </activity>
-
-        <activity android:name=".Myinfo_activity">
-
-        </activity>
-        <activity android:name=".Change_religion_activity"
-        >
-        </activity>
-        <activity android:name=".Change_vegan_activity">
-        </activity>
-        <activity android:name=".Change_allergic_activity">
-        </activity>
-        <activity android:name=".Change_ingredient_activity">
-        </activity>
-
-
+        <activity android:name=".AfterLogin_introactivity"></activity>
+        <activity android:name=".MainActivity"></activity>
+        <activity android:name=".SelectActivity"></activity>
+        <activity android:name=".Register_allergic_activity"></activity>
+        <activity android:name=".Register_vegan_activity"></activity>
+        <activity android:name=".Register_ingredient_activity"></activity>
+        <activity android:name=".Register_religion_activity"></activity>
+        <activity android:name=".Myinfo_activity"></activity>
+        <activity android:name=".Change_religion_activity"></activity>
+        <activity android:name=".Change_vegan_activity"></activity>
+        <activity android:name=".Change_allergic_activity"></activity>
+        <activity android:name=".Change_ingredient_activity"></activity>
     </application>
 
 </manifest>

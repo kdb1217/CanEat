@@ -1,6 +1,9 @@
 package com.example.caneat;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.Point;
+import android.graphics.Rect;
 import android.os.Bundle;
 import android.provider.MediaStore;
 import android.util.Log;
@@ -15,6 +18,10 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.ChildEventListener;
@@ -23,16 +30,19 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
-import com.google.firebase.storage.FirebaseStorage;
-import com.google.firebase.storage.StorageReference;
-import com.google.zxing.integration.android.IntentIntegrator;
-import com.google.zxing.integration.android.IntentResult;
+import com.google.mlkit.vision.common.InputImage;
+import com.google.mlkit.vision.text.Text;
+import com.google.mlkit.vision.text.TextRecognition;
+import com.google.mlkit.vision.text.TextRecognizer;
+import com.google.mlkit.vision.text.korean.KoreanTextRecognizerOptions;
+
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
 
 
-public class MainActivity extends AppCompatActivity implements View.OnClickListener {
+public class MainActivity extends AppCompatActivity {
 
     Button picture_button;
     FirebaseDatabase database;
@@ -49,6 +59,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public String adding;
     public String[] ingarray;
 
+    static final int REQUEST_IMAGE_CAPTURE = 1; //카메라 변수
+    Bitmap bitmap;
+    InputImage image;
+    TextView textview1;
+    public String OCRTEXT;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
@@ -58,7 +74,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         database = FirebaseDatabase.getInstance();
 
         picture_button = findViewById(R.id.picture_button);
-        picture_button.setOnClickListener(this);
 
         Button change_allergic=findViewById(R.id.change_allergic);
         change_allergic.setOnClickListener(new View.OnClickListener() {
@@ -156,52 +171,54 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     }
 
-    @Override
-    public void onClick(View view) {
-        scanCode();
-    }
-
-    private void scanCode() {
-
-        IntentIntegrator integrator = new IntentIntegrator(this);
-        integrator.setCaptureActivity(Capture.class);
-        integrator.setOrientationLocked(false);
-        integrator.setDesiredBarcodeFormats(IntentIntegrator.ALL_CODE_TYPES);
-        integrator.setPrompt("Scanning Code");
-        integrator.initiateScan();
-    }
-
-    @Override
-    protected void onActivityResult(int requestCode, int resultCode, Intent data){
-        IntentResult result = IntentIntegrator.parseActivityResult(requestCode, resultCode, data);
-        if (result != null){
-            if (result.getContents() != null){
-                AlertDialog.Builder builder = new AlertDialog.Builder(this);
-                builder.setMessage(result.getContents());
-                builder.setTitle("Scanning Result");
-                builder.setPositiveButton("Scan Again", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialogInterface, int i) {
-                        scanCode();
-                    }
-                }).setNegativeButton("finish", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialogInterface, int i) {
-                        finish();
-                    }
-                });
-
-                AlertDialog dialog = builder.create();
-                dialog.show();
-            }
-
-            else{
-                Toast.makeText(this,"No Results", Toast.LENGTH_LONG).show();
-            }
-        }else {
-            super.onActivityResult(requestCode, resultCode,data);
+    public void showCameraBtn(View view){
+        Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+        if(intent.resolveActivity(getPackageManager()) != null){
+            startActivityForResult(intent, REQUEST_IMAGE_CAPTURE);
         }
     }
 
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if(requestCode == REQUEST_IMAGE_CAPTURE && resultCode == RESULT_OK){
+            Bundle extras = data.getExtras();
+            bitmap = (Bitmap) extras.get("data");
+            getTextFromImage();
+        }
+    }
 
+    private void getTextFromImage(){
+        OCRTEXT = "";
+        image = InputImage.fromBitmap(bitmap, 0);
+        TextRecognizer recognizer = TextRecognition.getClient(new KoreanTextRecognizerOptions.Builder().build());
+        Task<Text> result = recognizer.process(image).addOnSuccessListener(new OnSuccessListener<Text>() {
+            @Override
+            public void onSuccess(@NonNull Text Text) {
+                StringBuilder stringBuilder = new StringBuilder();
+                for(Text.TextBlock block: Text.getTextBlocks()){
+                    String blockText = block.getText();
+                    Point[] blockCornerPoint = block.getCornerPoints();
+                    Rect blockFrame = block.getBoundingBox();
+                    for(Text.Line line : block.getLines()){
+                        String lineText = line.getText();
+                        Point[] lineCornerPoint = line.getCornerPoints();
+                        Rect linRect = line.getBoundingBox();
+                        for(Text.Element element: line.getElements()){
+                            String elementText = element.getText();
+                            stringBuilder.append(elementText);
+                        }
+                    }
+                    OCRTEXT = OCRTEXT + blockText;
+                }
+                Log.d("OCR확인", OCRTEXT);
+            }
+        }).addOnFailureListener(new OnFailureListener() {
+            @Override
+            public void onFailure(@NonNull Exception e) {
+                Toast.makeText(MainActivity.this, "fail",Toast.LENGTH_SHORT).show();
+            }
+        });
+
+    }
 }
