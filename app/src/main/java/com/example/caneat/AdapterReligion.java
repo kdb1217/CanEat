@@ -8,6 +8,7 @@ import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -30,6 +31,7 @@ public class AdapterReligion extends RecyclerView.Adapter<AdapterReligion.AHolde
         updateData.put("religion",value);
         return updateData;
     }
+    private Toast toast;
 
     final ArrayList<religion_info>arrayList;
     final Context context;
@@ -82,6 +84,8 @@ public class AdapterReligion extends RecyclerView.Adapter<AdapterReligion.AHolde
             check_allergic.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
+                    toast=Toast.makeText(context,"등록이 완료되었습니다.", Toast.LENGTH_SHORT);
+                    toast.show();
                     FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
                     String uid=user.getUid();
                     int pos= getAdapterPosition();

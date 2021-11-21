@@ -1,12 +1,15 @@
 package com.example.caneat;
 
+import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -30,6 +33,7 @@ public class AdapterRallergic extends RecyclerView.Adapter<AdapterRallergic.RHol
     public String ing;
     public String ingvalue;
     public String ning;
+    private Toast toast;
 
     Map<String, Object> updateData = new HashMap<>();
 
@@ -104,10 +108,17 @@ public class AdapterRallergic extends RecyclerView.Adapter<AdapterRallergic.RHol
             check_allergic.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
+
+                    Intent intent =((Activity)context).getIntent();
                   int pos =getAdapterPosition();
                   if(pos!=RecyclerView.NO_POSITION){
                       myallergic_info Myallergic_info=arrayList.get(pos);
-
+                        toast=Toast.makeText(context,"삭제가 완료되었습니다", Toast.LENGTH_SHORT);
+                        toast.show();
+                      ((Activity)context).finish();
+                      ((Activity)context).overridePendingTransition(0,0);
+                      ((Activity)context).startActivity(intent);
+                      ((Activity)context).overridePendingTransition(0,0);
                         switch (Myallergic_info.getAllergic_ingredient()){
                               case "소고기":
                                   ning=ing.replace(("@"+Myallergic_info.getAllergic_ingredient()),"");

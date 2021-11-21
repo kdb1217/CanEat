@@ -28,7 +28,7 @@
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:layout_gravity="right"
-            android:background="@drawable/caneatmyinfobutton"
+            android:background="@drawable/map"
             android:clickable="true"
             tools:ignore="SpeakableTextPresentCheck">
 
