@@ -1,12 +1,15 @@
 package com.example.caneat;
 
+import android.app.Activity;
 import android.content.Context;
 
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 
 import androidx.annotation.NonNull;
@@ -32,6 +35,7 @@ public class AdpaterAllergic extends RecyclerView.Adapter<AdpaterAllergic.MyHold
     List<User> mUser;
     public String ing;
     public String ning;
+    private Toast toast;
 
 
     Map<String, Object> updateData = new HashMap<>();
@@ -121,7 +125,10 @@ public class AdpaterAllergic extends RecyclerView.Adapter<AdpaterAllergic.MyHold
                     }
                     if (pos!=RecyclerView.NO_POSITION) {
                         allergic_info allergicInfo = arrayList.get(pos);
+                        Intent intent =((Activity)context).getIntent();
                         if(!(ing.contains(allergicInfo.getAllergic_ingredient()))) {
+                            toast= Toast.makeText(context,"등록이 완료되었습니", Toast.LENGTH_SHORT);
+                            toast.show();
                             switch (allergicInfo.getAllergic_ingredient()) {
                                 case "소고기":
                                     i = 1;
@@ -130,6 +137,10 @@ public class AdpaterAllergic extends RecyclerView.Adapter<AdpaterAllergic.MyHold
                                     ning = ing + ('@' + (allergicInfo.getAllergic_ingredient()));
                                     updateData.put("ingredient", ning);
                                     maindb.child(uid).updateChildren(updateData);
+                                    ((Activity)context).finish();
+                                    ((Activity)context).overridePendingTransition(0,0);
+                                    ((Activity)context).startActivity(intent);
+                                    ((Activity)context).overridePendingTransition(0,0);
                                     break;
                                 case "돼지고기":
                                     i = 2;
@@ -138,6 +149,10 @@ public class AdpaterAllergic extends RecyclerView.Adapter<AdpaterAllergic.MyHold
                                     ning = ing + ('@' + (allergicInfo.getAllergic_ingredient()));
                                     updateData.put("ingredient", ning);
                                     maindb.child(uid).updateChildren(updateData);
+                                    ((Activity)context).finish();
+                                    ((Activity)context).overridePendingTransition(0,0);
+                                    ((Activity)context).startActivity(intent);
+                                    ((Activity)context).overridePendingTransition(0,0);
                                     break;
                                 case "닭고기":
                                     i = 3;
@@ -146,6 +161,10 @@ public class AdpaterAllergic extends RecyclerView.Adapter<AdpaterAllergic.MyHold
                                     ning = ing + ('@' + (allergicInfo.getAllergic_ingredient()));
                                     updateData.put("ingredient", ning);
                                     maindb.child(uid).updateChildren(updateData);
+                                    ((Activity)context).finish();
+                                    ((Activity)context).overridePendingTransition(0,0);
+                                    ((Activity)context).startActivity(intent);
+                                    ((Activity)context).overridePendingTransition(0,0);
                                     break;
                                 case "새우":
                                     i = 4;
@@ -154,6 +173,10 @@ public class AdpaterAllergic extends RecyclerView.Adapter<AdpaterAllergic.MyHold
                                     ning = ing + ('@' + (allergicInfo.getAllergic_ingredient()));
                                     updateData.put("ingredient", ning);
                                     maindb.child(uid).updateChildren(updateData);
+                                    ((Activity)context).finish();
+                                    ((Activity)context).overridePendingTransition(0,0);
+                                    ((Activity)context).startActivity(intent);
+                                    ((Activity)context).overridePendingTransition(0,0);
                                     break;
                                 case "게":
                                     i = 5;
@@ -162,6 +185,10 @@ public class AdpaterAllergic extends RecyclerView.Adapter<AdpaterAllergic.MyHold
                                     ning = ing + ('@' + (allergicInfo.getAllergic_ingredient()));
                                     updateData.put("ingredient", ning);
                                     maindb.child(uid).updateChildren(updateData);
+                                    ((Activity)context).finish();
+                                    ((Activity)context).overridePendingTransition(0,0);
+                                    ((Activity)context).startActivity(intent);
+                                    ((Activity)context).overridePendingTransition(0,0);
                                     break;
                                 case "오징어":
                                     i = 6;
@@ -170,6 +197,10 @@ public class AdpaterAllergic extends RecyclerView.Adapter<AdpaterAllergic.MyHold
                                     ning = ing + ('@' + (allergicInfo.getAllergic_ingredient()));
                                     updateData.put("ingredient", ning);
                                     maindb.child(uid).updateChildren(updateData);
+                                    ((Activity)context).finish();
+                                    ((Activity)context).overridePendingTransition(0,0);
+                                    ((Activity)context).startActivity(intent);
+                                    ((Activity)context).overridePendingTransition(0,0);
                                     break;
                                 case "고등어":
                                     i = 7;
@@ -178,6 +209,10 @@ public class AdpaterAllergic extends RecyclerView.Adapter<AdpaterAllergic.MyHold
                                     ning = ing + ('@' + (allergicInfo.getAllergic_ingredient()));
                                     updateData.put("ingredient", ning);
                                     maindb.child(uid).updateChildren(updateData);
+                                    ((Activity)context).finish();
+                                    ((Activity)context).overridePendingTransition(0,0);
+                                    ((Activity)context).startActivity(intent);
+                                    ((Activity)context).overridePendingTransition(0,0);
                                     break;
                                 case "우유":
                                     i = 8;
@@ -186,6 +221,10 @@ public class AdpaterAllergic extends RecyclerView.Adapter<AdpaterAllergic.MyHold
                                     ning = ing + ('@' + (allergicInfo.getAllergic_ingredient()));
                                     updateData.put("ingredient", ning);
                                     maindb.child(uid).updateChildren(updateData);
+                                    ((Activity)context).finish();
+                                    ((Activity)context).overridePendingTransition(0,0);
+                                    ((Activity)context).startActivity(intent);
+                                    ((Activity)context).overridePendingTransition(0,0);
                                     break;
                                 case "땅콩":
                                     i = 9;
@@ -194,6 +233,10 @@ public class AdpaterAllergic extends RecyclerView.Adapter<AdpaterAllergic.MyHold
                                     ning = ing + ('@' + (allergicInfo.getAllergic_ingredient()));
                                     updateData.put("ingredient", ning);
                                     maindb.child(uid).updateChildren(updateData);
+                                    ((Activity)context).finish();
+                                    ((Activity)context).overridePendingTransition(0,0);
+                                    ((Activity)context).startActivity(intent);
+                                    ((Activity)context).overridePendingTransition(0,0);
                                     break;
                                 case "호두":
                                     i = 10;
@@ -202,6 +245,10 @@ public class AdpaterAllergic extends RecyclerView.Adapter<AdpaterAllergic.MyHold
                                     ning = ing + ('@' + (allergicInfo.getAllergic_ingredient()));
                                     updateData.put("ingredient", ning);
                                     maindb.child(uid).updateChildren(updateData);
+                                    ((Activity)context).finish();
+                                    ((Activity)context).overridePendingTransition(0,0);
+                                    ((Activity)context).startActivity(intent);
+                                    ((Activity)context).overridePendingTransition(0,0);
                                     break;
                                 case "잣":
                                     i = 11;
@@ -210,6 +257,10 @@ public class AdpaterAllergic extends RecyclerView.Adapter<AdpaterAllergic.MyHold
                                     ning = ing + ('@' + (allergicInfo.getAllergic_ingredient()));
                                     updateData.put("ingredient", ning);
                                     maindb.child(uid).updateChildren(updateData);
+                                    ((Activity)context).finish();
+                                    ((Activity)context).overridePendingTransition(0,0);
+                                    ((Activity)context).startActivity(intent);
+                                    ((Activity)context).overridePendingTransition(0,0);
                                     break;
                                 case "대두":
                                     i = 12;
@@ -218,6 +269,10 @@ public class AdpaterAllergic extends RecyclerView.Adapter<AdpaterAllergic.MyHold
                                     ning = ing + ('@' + (allergicInfo.getAllergic_ingredient()));
                                     updateData.put("ingredient", ning);
                                     maindb.child(uid).updateChildren(updateData);
+                                    ((Activity)context).finish();
+                                    ((Activity)context).overridePendingTransition(0,0);
+                                    ((Activity)context).startActivity(intent);
+                                    ((Activity)context).overridePendingTransition(0,0);
                                     break;
                                 case "복숭아":
                                     i = 13;
@@ -226,6 +281,10 @@ public class AdpaterAllergic extends RecyclerView.Adapter<AdpaterAllergic.MyHold
                                     ning = ing + ('@' + (allergicInfo.getAllergic_ingredient()));
                                     updateData.put("ingredient", ning);
                                     maindb.child(uid).updateChildren(updateData);
+                                    ((Activity)context).finish();
+                                    ((Activity)context).overridePendingTransition(0,0);
+                                    ((Activity)context).startActivity(intent);
+                                    ((Activity)context).overridePendingTransition(0,0);
                                     break;
                                 case "토마토":
                                     i = 14;
@@ -234,6 +293,10 @@ public class AdpaterAllergic extends RecyclerView.Adapter<AdpaterAllergic.MyHold
                                     ning = ing + ('@' + (allergicInfo.getAllergic_ingredient()));
                                     updateData.put("ingredient", ning);
                                     maindb.child(uid).updateChildren(updateData);
+                                    ((Activity)context).finish();
+                                    ((Activity)context).overridePendingTransition(0,0);
+                                    ((Activity)context).startActivity(intent);
+                                    ((Activity)context).overridePendingTransition(0,0);
                                     break;
                                 case "밀":
                                     i = 15;
@@ -242,6 +305,10 @@ public class AdpaterAllergic extends RecyclerView.Adapter<AdpaterAllergic.MyHold
                                     ning = ing + ('@' + (allergicInfo.getAllergic_ingredient()));
                                     updateData.put("ingredient", ning);
                                     maindb.child(uid).updateChildren(updateData);
+                                    ((Activity)context).finish();
+                                    ((Activity)context).overridePendingTransition(0,0);
+                                    ((Activity)context).startActivity(intent);
+                                    ((Activity)context).overridePendingTransition(0,0);
                                     break;
                                 case "메밀":
                                     i = 16;
@@ -250,6 +317,10 @@ public class AdpaterAllergic extends RecyclerView.Adapter<AdpaterAllergic.MyHold
                                     ning = ing + ('@' + (allergicInfo.getAllergic_ingredient()));
                                     updateData.put("ingredient", ning);
                                     maindb.child(uid).updateChildren(updateData);
+                                    ((Activity)context).finish();
+                                    ((Activity)context).overridePendingTransition(0,0);
+                                    ((Activity)context).startActivity(intent);
+                                    ((Activity)context).overridePendingTransition(0,0);
                                     break;
                                 case "아황산":
                                     i = 17;
@@ -258,6 +329,10 @@ public class AdpaterAllergic extends RecyclerView.Adapter<AdpaterAllergic.MyHold
                                     ning = ing + ('@' + (allergicInfo.getAllergic_ingredient()));
                                     updateData.put("ingredient", ning);
                                     maindb.child(uid).updateChildren(updateData);
+                                    ((Activity)context).finish();
+                                    ((Activity)context).overridePendingTransition(0,0);
+                                    ((Activity)context).startActivity(intent);
+                                    ((Activity)context).overridePendingTransition(0,0);
                                     break;
                                 case "조개류(굴,전복,홍합 포함)":
                                     i = 18;
@@ -266,6 +341,10 @@ public class AdpaterAllergic extends RecyclerView.Adapter<AdpaterAllergic.MyHold
                                     ning = ing + ('@' + (allergicInfo.getAllergic_ingredient()));
                                     updateData.put("ingredient", ning);
                                     maindb.child(uid).updateChildren(updateData);
+                                    ((Activity)context).finish();
+                                    ((Activity)context).overridePendingTransition(0,0);
+                                    ((Activity)context).startActivity(intent);
+                                    ((Activity)context).overridePendingTransition(0,0);
                                     break;
                                 case "난류(가금류)":
                                     i = 19;
@@ -274,8 +353,16 @@ public class AdpaterAllergic extends RecyclerView.Adapter<AdpaterAllergic.MyHold
                                     ning = ing + ('@' + (allergicInfo.getAllergic_ingredient()));
                                     updateData.put("ingredient", ning);
                                     maindb.child(uid).updateChildren(updateData);
+                                    ((Activity)context).finish();
+                                    ((Activity)context).overridePendingTransition(0,0);
+                                    ((Activity)context).startActivity(intent);
+                                    ((Activity)context).overridePendingTransition(0,0);
                                     break;
                             }
+                        }
+                        else {
+                            toast = Toast.makeText(context, "이미 등록된 성분입니다.", Toast.LENGTH_SHORT);
+                            toast.show();
                         }
 
 

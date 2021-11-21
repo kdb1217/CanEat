@@ -164,7 +164,10 @@ public class IntroActivity  extends AppCompatActivity  {
                 User user_info =new User(email,name);
 
                 maindb.child("user").child(uid).setValue(user_info);
-                maindb.child("user").child(uid).child("ingredient").setValue("@");
+                maindb.child("user").child(uid).child("ingredient").setValue("없음");
+                maindb.child("user").child(uid).child("addingredient").setValue("없음");
+                maindb.child("user").child(uid).child("vegan").setValue("없음");
+                maindb.child("user").child(uid).child("religion").setValue("없음");
 
 
 

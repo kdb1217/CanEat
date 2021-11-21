@@ -31,7 +31,7 @@
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:layout_gravity="right"
-            android:background="@drawable/caneatmyinfobutton"
+            android:background="@drawable/map"
             android:clickable="true"
             tools:ignore="SpeakableTextPresentCheck"
             tools:layout_editor_absoluteX="351dp"
@@ -76,8 +76,8 @@
         <androidx.appcompat.widget.LinearLayoutCompat
             android:id="@+id/veganlayout"
             android:layout_width="match_parent"
-            android:layout_height="55dp"
-            android:layout_marginTop="20dp"
+            android:layout_height="80dp"
+            android:layout_marginTop="40dp"
             android:orientation="horizontal">
 
 
@@ -89,12 +89,13 @@
                 android:layout_weight="1"
                 android:text="@string/vegan"
                 android:textColor="#00000B"
-                android:textStyle="normal" />
+                android:textSize="18dp"
+                android:textStyle="bold" />
 
             <Button
                 android:id="@+id/vegan_button"
                 android:layout_width="1dp"
-                android:layout_height="match_parent"
+                android:layout_height="50dp"
                 android:layout_marginRight="15dp"
                 android:layout_weight="1"
                 android:background="@drawable/register_button"
@@ -106,8 +107,8 @@
         <androidx.appcompat.widget.LinearLayoutCompat
             android:id="@+id/allegric_layout"
             android:layout_width="match_parent"
-            android:layout_height="55dp"
-            android:layout_marginTop="20dp"
+            android:layout_height="80dp"
+            android:layout_marginTop="40dp"
             android:orientation="horizontal">
 
             <TextView
@@ -117,13 +118,14 @@
                 android:layout_marginStart="30dp"
                 android:layout_weight="1"
                 android:text="알레르기"
+                android:textSize="18dp"
                 android:textColor="#00000B"
-                android:textStyle="normal" />
+                android:textStyle="bold" />
 
             <Button
                 android:id="@+id/allegric_button"
                 android:layout_width="1dp"
-                android:layout_height="match_parent"
+                android:layout_height="50dp"
                 android:layout_marginEnd="15dp"
                 android:layout_weight="1"
                 android:background="@drawable/register_button"
@@ -135,8 +137,8 @@
         <androidx.appcompat.widget.LinearLayoutCompat
             android:id="@+id/religion_layout"
             android:layout_width="match_parent"
-            android:layout_height="55dp"
-            android:layout_marginTop="20dp"
+            android:layout_height="80dp"
+            android:layout_marginTop="40dp"
             android:orientation="horizontal">
 
             <TextView
@@ -146,13 +148,14 @@
                 android:layout_marginStart="30dp"
                 android:layout_weight="1"
                 android:text="종교"
+                android:textSize="18dp"
                 android:textColor="#00000B"
-                android:textStyle="normal" />
+                android:textStyle="bold" />
 
             <Button
                 android:id="@+id/religion_button"
                 android:layout_width="1dp"
-                android:layout_height="match_parent"
+                android:layout_height="50dp"
                 android:layout_marginEnd="15dp"
                 android:layout_weight="1"
                 android:background="@drawable/register_button"
@@ -163,8 +166,8 @@
         <androidx.appcompat.widget.LinearLayoutCompat
             android:id="@+id/ingredient_layout"
             android:layout_width="match_parent"
-            android:layout_height="55dp"
-            android:layout_marginTop="20dp"
+            android:layout_height="80dp"
+            android:layout_marginTop="40dp"
             android:orientation="horizontal">
 
             <TextView
@@ -173,14 +176,15 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="30dp"
                 android:layout_weight="1"
-                android:text="못먹는 성분"
+                android:text="직접등록성분"
                 android:textColor="#00000B"
-                android:textStyle="normal" />
+                android:textSize="18dp"
+                android:textStyle="bold" />
 
             <Button
                 android:id="@+id/ingredient_button"
                 android:layout_width="1dp"
-                android:layout_height="match_parent"
+                android:layout_height="50dp"
                 android:layout_marginEnd="15dp"
                 android:layout_weight="1"
                 android:background="@drawable/register_button"

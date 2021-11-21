@@ -30,7 +30,7 @@
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:layout_gravity="right"
-            android:background="@drawable/caneatmyinfobutton"
+            android:background="@drawable/map"
             android:clickable="true"
             tools:ignore="SpeakableTextPresentCheck">
 
@@ -64,17 +64,21 @@
                 android:layout_height="100dp"
                 android:orientation="vertical">
 
+
                 <TextView
                     android:layout_width="210dp"
-                    android:layout_height="43dp"
+                    android:layout_height="33dp"
                     android:layout_gravity="left"
-                    android:text="비건 변경하기"
+                    android:paddingLeft="12dp"
+                    android:layout_marginTop="5dp"
+                    android:text="비건"
                     android:textColor="@color/black"
-                    android:paddingLeft="10dp">
+                    android:textSize="18dp"
+                    android:textStyle="bold">
                 </TextView>
 
-
                 <TextView
+                    android:paddingLeft="10dp"
                     android:id="@+id/vegan_content"
                     android:layout_width="210dp"
                     android:layout_height="50dp"
@@ -87,9 +91,11 @@
             </LinearLayout>
 
             <Button
+                android:layout_marginRight="30dp"
+                android:layout_marginLeft="12dp"
                 android:id="@+id/vegan_change"
-                android:layout_width="100dp"
-                android:layout_height="50dp"
+                android:layout_width="95dp"
+                android:layout_height="48dp"
                 android:layout_gravity="center"
                 android:background="@drawable/roundlayout"
                 android:text="변경하기"
@@ -118,14 +124,17 @@
 
                 <TextView
                     android:layout_width="210dp"
-                    android:layout_height="43dp"
+                    android:layout_height="33dp"
                     android:layout_gravity="center"
-                    android:text="종교 변경하기"
+                    android:text="종교"
+                    android:textSize="18dp"
+                    android:textStyle="bold"
                     android:textColor="@color/black"
-                    android:paddingLeft="10dp">
+                    android:paddingLeft="12dp">
                 </TextView>
 
                 <TextView
+                    android:paddingLeft="10dp"
                     android:id="@+id/religion_content"
                     android:layout_width="210dp"
                     android:layout_height="50dp"
@@ -137,17 +146,16 @@
             </LinearLayout>
 
             <Button
-
                 android:id="@+id/change_religion"
-                android:layout_width="100dp"
-                android:layout_height="50dp"
+                android:layout_width="95dp"
+                android:layout_height="48dp"
                 android:layout_gravity="center"
+                android:layout_marginLeft="12dp"
                 android:layout_marginRight="30dp"
 
                 android:background="@drawable/roundlayout"
                 android:text="변경하기"
-                android:textColor="@color/black">
-            </Button>
+                android:textColor="@color/black"></Button>
         </LinearLayout>
 
         <LinearLayout
@@ -167,27 +175,31 @@
 
                 <TextView
                     android:layout_width="210dp"
-                    android:layout_height="43dp"
+                    android:layout_height="33dp"
                     android:layout_gravity="center"
-                    android:text="알레르기 변경하기"
+                    android:text="알레르기"
+                    android:textSize="18dp"
+                    android:textStyle="bold"
                     android:textColor="@color/black"
-                    android:paddingLeft="10dp">
+                    android:paddingLeft="12dp">
                 </TextView>
 
                 <TextView
                     android:id="@+id/allergic_content"
-                    android:layout_width="210dp"
-                    android:layout_height="50dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:paddingLeft="10dp"
                     android:text="알레르기 내용"
                     android:textColor="@color/black">
+
                 </TextView>
             </LinearLayout>
 
             <Button
-
+                android:layout_marginLeft="12dp"
                 android:id="@+id/change_allergic"
-                android:layout_width="100dp"
-                android:layout_height="50dp"
+                android:layout_width="95dp"
+                android:layout_height="48dp"
                 android:layout_gravity="center"
                 android:layout_marginRight="30dp"
 
@@ -215,28 +227,31 @@
 
                 <TextView
                     android:layout_width="210dp"
-                    android:layout_height="43dp"
+                    android:layout_height="33dp"
                     android:layout_gravity="center"
-                    android:text="못먹는 성분 변경하기"
+                    android:paddingLeft="12dp"
+                    android:text="개인등록성분"
                     android:textColor="@color/black"
-                    android:paddingLeft="10dp">
+                    android:textSize="18dp"
+                    android:textStyle="bold">
                 </TextView>
 
                 <TextView
+                    android:paddingLeft="10dp"
                     android:id="@+id/ingredient_content"
                     android:layout_width="210dp"
-                    android:layout_height="50dp"
-                    android:text="알레르기 내용"
+                    android:layout_height="49dp"
+                    android:text="못먹는 성분 내용"
                     android:textColor="@color/black">
                 </TextView>
             </LinearLayout>
 
 
             <Button
-
+                android:layout_marginLeft="12dp"
                 android:id="@+id/change_ingredient"
-                android:layout_width="100dp"
-                android:layout_height="50dp"
+                android:layout_width="95dp"
+                android:layout_height="48dp"
                 android:layout_gravity="center"
                 android:layout_marginRight="30dp"
 
