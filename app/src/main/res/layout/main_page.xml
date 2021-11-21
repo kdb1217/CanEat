@@ -185,12 +185,13 @@
                 </TextView>
 
                 <TextView
-                    android:paddingLeft="10dp"
                     android:id="@+id/allergic_content"
-                    android:layout_width="210dp"
-                    android:layout_height="50dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:paddingLeft="10dp"
                     android:text="알레르기 내용"
                     android:textColor="@color/black">
+
                 </TextView>
             </LinearLayout>
 

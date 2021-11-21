@@ -7,6 +7,9 @@ public class User {
     public String ingredient;
     public String vegan;
     public String religion;
+    public String addingredient;
+
+    public String getAddingredient() { return addingredient; }
 
     public String getReligion() { return religion; }
 

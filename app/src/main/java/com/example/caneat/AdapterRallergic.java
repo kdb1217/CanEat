@@ -235,8 +235,13 @@ public class AdapterRallergic extends RecyclerView.Adapter<AdapterRallergic.RHol
                                   maindb.child("myallergic_info").child("19").removeValue();
                                   break;
                           }
+                        if(ning.equals("")) {
+                          updateData.put("ingredient", "없음");
+                          maindb.updateChildren(updateData);
+                      }
 
                   }
+
                 }
             });
 

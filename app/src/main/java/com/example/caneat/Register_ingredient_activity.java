@@ -44,12 +44,6 @@ public class Register_ingredient_activity extends AppCompatActivity {
                 maindb.child(uid).child("data").setValue(ingredient);
                 toast=Toast.makeText(getApplicationContext(),"등록이 완료 되었습니다.",Toast.LENGTH_SHORT);
                 toast.show();
-
-
-
-
-
-
             }
         });
 
