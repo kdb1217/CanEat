@@ -59,27 +59,45 @@
             android:background="@drawable/roundlayout"
             android:orientation="horizontal">
 
-            <TextView
-                android:layout_width="210dp"
-                android:layout_height="43dp"
-                android:layout_gravity="center"
-                android:text="비건 변경하기"
-                android:textColor="@color/black"
-                android:paddingLeft="10dp">
-            </TextView>
+            <LinearLayout
+                android:layout_width="200dp"
+                android:layout_height="100dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="210dp"
+                    android:layout_height="43dp"
+                    android:layout_gravity="left"
+                    android:text="비건 변경하기"
+                    android:textColor="@color/black"
+                    android:paddingLeft="10dp">
+                </TextView>
+
+
+                <TextView
+                    android:id="@+id/vegan_content"
+                    android:layout_width="210dp"
+                    android:layout_height="50dp"
+                    android:text="비건내용 들어갈 예정"
+                    android:textColor="@color/black">
+                </TextView>
+
+
+
+            </LinearLayout>
 
             <Button
-
                 android:id="@+id/vegan_change"
                 android:layout_width="100dp"
                 android:layout_height="50dp"
                 android:layout_gravity="center"
-                android:layout_marginRight="30dp"
-
                 android:background="@drawable/roundlayout"
                 android:text="변경하기"
                 android:textColor="@color/black">
             </Button>
+
+
+
 
         </LinearLayout>
 
@@ -93,14 +111,30 @@
             android:background="@drawable/roundlayout"
             android:orientation="horizontal">
 
-            <TextView
-                android:layout_width="210dp"
-                android:layout_height="43dp"
-                android:layout_gravity="center"
-                android:text="종교 변경하기"
-                android:textColor="@color/black"
-                android:paddingLeft="10dp">
-            </TextView>
+            <LinearLayout
+                android:layout_width="200dp"
+                android:layout_height="100dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="210dp"
+                    android:layout_height="43dp"
+                    android:layout_gravity="center"
+                    android:text="종교 변경하기"
+                    android:textColor="@color/black"
+                    android:paddingLeft="10dp">
+                </TextView>
+
+                <TextView
+                    android:id="@+id/religion_content"
+                    android:layout_width="210dp"
+                    android:layout_height="50dp"
+                    android:text="종교내용"
+                    android:textColor="@color/black">
+                </TextView>
+
+
+            </LinearLayout>
 
             <Button
 
@@ -125,14 +159,29 @@
             android:layout_marginBottom="50dp"
             android:background="@drawable/roundlayout"
             android:orientation="horizontal">
-            <TextView
-                android:layout_width="210dp"
-                android:layout_height="43dp"
-                android:layout_gravity="center"
-                android:text="알레르기 변경하기"
-                android:textColor="@color/black"
-                android:paddingLeft="10dp">
-            </TextView>
+
+            <LinearLayout
+                android:layout_width="200dp"
+                android:layout_height="100dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="210dp"
+                    android:layout_height="43dp"
+                    android:layout_gravity="center"
+                    android:text="알레르기 변경하기"
+                    android:textColor="@color/black"
+                    android:paddingLeft="10dp">
+                </TextView>
+
+                <TextView
+                    android:id="@+id/allergic_content"
+                    android:layout_width="210dp"
+                    android:layout_height="50dp"
+                    android:text="알레르기 내용"
+                    android:textColor="@color/black">
+                </TextView>
+            </LinearLayout>
 
             <Button
 
@@ -159,14 +208,29 @@
             android:layout_marginBottom="40dp"
             android:background="@drawable/roundlayout"
             android:orientation="horizontal">
-            <TextView
-                android:layout_width="210dp"
-                android:layout_height="43dp"
-                android:layout_gravity="center"
-                android:text="못먹는 성분 변경하기"
-                android:textColor="@color/black"
-                android:paddingLeft="10dp">
-            </TextView>
+            <LinearLayout
+                android:layout_width="200dp"
+                android:layout_height="100dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="210dp"
+                    android:layout_height="43dp"
+                    android:layout_gravity="center"
+                    android:text="못먹는 성분 변경하기"
+                    android:textColor="@color/black"
+                    android:paddingLeft="10dp">
+                </TextView>
+
+                <TextView
+                    android:id="@+id/ingredient_content"
+                    android:layout_width="210dp"
+                    android:layout_height="50dp"
+                    android:text="알레르기 내용"
+                    android:textColor="@color/black">
+                </TextView>
+            </LinearLayout>
+
 
             <Button
 
