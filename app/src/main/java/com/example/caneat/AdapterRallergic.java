@@ -105,127 +105,131 @@ public class AdapterRallergic extends RecyclerView.Adapter<AdapterRallergic.RHol
                 @Override
                 public void onClick(View v) {
                   int pos =getAdapterPosition();
-                  if(pos!=RecyclerView.NO_POSITION){
-                      myallergic_info Myallergic_info=arrayList.get(pos);
+                  if(pos!=RecyclerView.NO_POSITION) {
+                      myallergic_info Myallergic_info = arrayList.get(pos);
 
-                        switch (Myallergic_info.getAllergic_ingredient()){
-                              case "소고기":
-                                  ning=ing.replace(("@"+Myallergic_info.getAllergic_ingredient()),"");
-                                  updateData.put("ingredient",ning);
-                                  maindb.updateChildren(updateData);
-                                  maindb.child("myallergic_info").child("1").removeValue();
-                                  break;
-                              case "돼지고기":
-                                  ning=ing.replace(("@"+Myallergic_info.getAllergic_ingredient()),"");
-                                  updateData.put("ingredient",ning);
-                                  maindb.updateChildren(updateData);
-                                  maindb.child("myallergic_info").child("2").removeValue();
-                                  break;
-                              case "닭고기":
-                                  ning=ing.replace(("@"+Myallergic_info.getAllergic_ingredient()),"");
-                                  updateData.put("ingredient",ning);
-                                  maindb.updateChildren(updateData);
-                                  maindb.child("myallergic_info").child("3").removeValue();
-                                  break;
-                              case "새우":
-                                  ning=ing.replace(("@"+Myallergic_info.getAllergic_ingredient()),"");
-                                  updateData.put("ingredient",ning);
-                                  maindb.updateChildren(updateData);
-                                  maindb.child("myallergic_info").child("4").removeValue();
-                                  break;
-                              case "게":
-                                  ning=ing.replace(("@"+Myallergic_info.getAllergic_ingredient()),"");
-                                  updateData.put("ingredient",ning);
-                                  maindb.updateChildren(updateData);
-                                  maindb.child("myallergic_info").child("5").removeValue();
-                                  break;
-                              case "오징어":
-                                  ning=ing.replace(("@"+Myallergic_info.getAllergic_ingredient()),"");
-                                  updateData.put("ingredient",ning);
-                                  maindb.updateChildren(updateData);
-                                  maindb.child("myallergic_info").child("6").removeValue();
-                                  break;
-                              case "고등어":
-                                  ning=ing.replace(("@"+Myallergic_info.getAllergic_ingredient()),"");
-                                  updateData.put("ingredient",ning);
-                                  maindb.updateChildren(updateData);
-                                  maindb.child("myallergic_info").child("7").removeValue();
-                                  break;
-                              case "우유":
-                                  ning=ing.replace(("@"+Myallergic_info.getAllergic_ingredient()),"");
-                                  updateData.put("ingredient",ning);
-                                  maindb.updateChildren(updateData);
-                                  maindb.child("myallergic_info").child("8").removeValue();
-                                  break;
-                              case "땅콩":
-                                  ning=ing.replace(("@"+Myallergic_info.getAllergic_ingredient()),"");
-                                  updateData.put("ingredient",ning);
-                                  maindb.updateChildren(updateData);
-                                  maindb.child("myallergic_info").child("9").removeValue();
-                                  break;
-                              case "호두":
-                                  ning=ing.replace(("@"+Myallergic_info.getAllergic_ingredient()),"");
-                                  updateData.put("ingredient",ning);
-                                  maindb.updateChildren(updateData);
-                                  maindb.child("myallergic_info").child("10").removeValue();
-                                  break;
-                              case "잣":
-                                  ning=ing.replace(("@"+Myallergic_info.getAllergic_ingredient()),"");
-                                  updateData.put("ingredient",ning);
-                                  maindb.updateChildren(updateData);
-                                  maindb.child("myallergic_info").child("11").removeValue();
-                                  break;
-                              case "대두":
-                                  ning=ing.replace(("@"+Myallergic_info.getAllergic_ingredient()),"");
-                                  updateData.put("ingredient",ning);
-                                  maindb.updateChildren(updateData);
-                                  maindb.child("myallergic_info").child("12").removeValue();
-                                  break;
-                              case "복숭아":
-                                  ning=ing.replace(("@"+Myallergic_info.getAllergic_ingredient()),"");
-                                  updateData.put("ingredient",ning);
-                                  maindb.updateChildren(updateData);
-                                  maindb.child("myallergic_info").child("13").removeValue();
-                                  break;
-                              case "토마토":
-                                  ning=ing.replace(("@"+Myallergic_info.getAllergic_ingredient()),"");
-                                  updateData.put("ingredient",ning);
-                                  maindb.updateChildren(updateData);
-                                  maindb.child("myallergic_info").child("14").removeValue();
-                                  break;
-                              case "밀":
-                                  ning=ing.replace(("@"+Myallergic_info.getAllergic_ingredient()),"");
-                                  updateData.put("ingredient",ning);
-                                  maindb.updateChildren(updateData);
-                                  maindb.child("myallergic_info").child("15").removeValue();
-                                  break;
-                              case "메밀":
-                                  ning=ing.replace(("@"+Myallergic_info.getAllergic_ingredient()),"");
-                                  updateData.put("ingredient",ning);
-                                  maindb.updateChildren(updateData);
-                                  maindb.child("myallergic_info").child("16").removeValue();
-                                  break;
-                              case "아황산":
-                                  ning=ing.replace(("@"+Myallergic_info.getAllergic_ingredient()),"");
-                                  updateData.put("ingredient",ning);
-                                  maindb.updateChildren(updateData);
-                                  maindb.child("myallergic_info").child("17").removeValue();
-                                  break;
-                              case "조개류(굴,전복,홍합 포함)":
-                                  ning=ing.replace(("@"+Myallergic_info.getAllergic_ingredient()),"");
-                                  updateData.put("ingredient",ning);
-                                  maindb.updateChildren(updateData);
-                                  maindb.child("myallergic_info").child("18").removeValue();
-                                  break;
-                              case "난류(가금류)":
-                                  ning=ing.replace(("@"+Myallergic_info.getAllergic_ingredient()),"");
-                                  updateData.put("ingredient",ning);
-                                  maindb.updateChildren(updateData);
-                                  maindb.child("myallergic_info").child("19").removeValue();
-                                  break;
-                          }
-
+                      switch (Myallergic_info.getAllergic_ingredient()) {
+                          case "소고기":
+                              ning = ing.replace(("@" + Myallergic_info.getAllergic_ingredient()), "");
+                              updateData.put("ingredient", ning);
+                              maindb.updateChildren(updateData);
+                              maindb.child("myallergic_info").child("1").removeValue();
+                              break;
+                          case "돼지고기":
+                              ning = ing.replace(("@" + Myallergic_info.getAllergic_ingredient()), "");
+                              updateData.put("ingredient", ning);
+                              maindb.updateChildren(updateData);
+                              maindb.child("myallergic_info").child("2").removeValue();
+                              break;
+                          case "닭고기":
+                              ning = ing.replace(("@" + Myallergic_info.getAllergic_ingredient()), "");
+                              updateData.put("ingredient", ning);
+                              maindb.updateChildren(updateData);
+                              maindb.child("myallergic_info").child("3").removeValue();
+                              break;
+                          case "새우":
+                              ning = ing.replace(("@" + Myallergic_info.getAllergic_ingredient()), "");
+                              updateData.put("ingredient", ning);
+                              maindb.updateChildren(updateData);
+                              maindb.child("myallergic_info").child("4").removeValue();
+                              break;
+                          case "게":
+                              ning = ing.replace(("@" + Myallergic_info.getAllergic_ingredient()), "");
+                              updateData.put("ingredient", ning);
+                              maindb.updateChildren(updateData);
+                              maindb.child("myallergic_info").child("5").removeValue();
+                              break;
+                          case "오징어":
+                              ning = ing.replace(("@" + Myallergic_info.getAllergic_ingredient()), "");
+                              updateData.put("ingredient", ning);
+                              maindb.updateChildren(updateData);
+                              maindb.child("myallergic_info").child("6").removeValue();
+                              break;
+                          case "고등어":
+                              ning = ing.replace(("@" + Myallergic_info.getAllergic_ingredient()), "");
+                              updateData.put("ingredient", ning);
+                              maindb.updateChildren(updateData);
+                              maindb.child("myallergic_info").child("7").removeValue();
+                              break;
+                          case "우유":
+                              ning = ing.replace(("@" + Myallergic_info.getAllergic_ingredient()), "");
+                              updateData.put("ingredient", ning);
+                              maindb.updateChildren(updateData);
+                              maindb.child("myallergic_info").child("8").removeValue();
+                              break;
+                          case "땅콩":
+                              ning = ing.replace(("@" + Myallergic_info.getAllergic_ingredient()), "");
+                              updateData.put("ingredient", ning);
+                              maindb.updateChildren(updateData);
+                              maindb.child("myallergic_info").child("9").removeValue();
+                              break;
+                          case "호두":
+                              ning = ing.replace(("@" + Myallergic_info.getAllergic_ingredient()), "");
+                              updateData.put("ingredient", ning);
+                              maindb.updateChildren(updateData);
+                              maindb.child("myallergic_info").child("10").removeValue();
+                              break;
+                          case "잣":
+                              ning = ing.replace(("@" + Myallergic_info.getAllergic_ingredient()), "");
+                              updateData.put("ingredient", ning);
+                              maindb.updateChildren(updateData);
+                              maindb.child("myallergic_info").child("11").removeValue();
+                              break;
+                          case "대두":
+                              ning = ing.replace(("@" + Myallergic_info.getAllergic_ingredient()), "");
+                              updateData.put("ingredient", ning);
+                              maindb.updateChildren(updateData);
+                              maindb.child("myallergic_info").child("12").removeValue();
+                              break;
+                          case "복숭아":
+                              ning = ing.replace(("@" + Myallergic_info.getAllergic_ingredient()), "");
+                              updateData.put("ingredient", ning);
+                              maindb.updateChildren(updateData);
+                              maindb.child("myallergic_info").child("13").removeValue();
+                              break;
+                          case "토마토":
+                              ning = ing.replace(("@" + Myallergic_info.getAllergic_ingredient()), "");
+                              updateData.put("ingredient", ning);
+                              maindb.updateChildren(updateData);
+                              maindb.child("myallergic_info").child("14").removeValue();
+                              break;
+                          case "밀":
+                              ning = ing.replace(("@" + Myallergic_info.getAllergic_ingredient()), "");
+                              updateData.put("ingredient", ning);
+                              maindb.updateChildren(updateData);
+                              maindb.child("myallergic_info").child("15").removeValue();
+                              break;
+                          case "메밀":
+                              ning = ing.replace(("@" + Myallergic_info.getAllergic_ingredient()), "");
+                              updateData.put("ingredient", ning);
+                              maindb.updateChildren(updateData);
+                              maindb.child("myallergic_info").child("16").removeValue();
+                              break;
+                          case "아황산":
+                              ning = ing.replace(("@" + Myallergic_info.getAllergic_ingredient()), "");
+                              updateData.put("ingredient", ning);
+                              maindb.updateChildren(updateData);
+                              maindb.child("myallergic_info").child("17").removeValue();
+                              break;
+                          case "조개류(굴,전복,홍합 포함)":
+                              ning = ing.replace(("@" + Myallergic_info.getAllergic_ingredient()), "");
+                              updateData.put("ingredient", ning);
+                              maindb.updateChildren(updateData);
+                              maindb.child("myallergic_info").child("18").removeValue();
+                              break;
+                          case "난류(가금류)":
+                              ning = ing.replace(("@" + Myallergic_info.getAllergic_ingredient()), "");
+                              updateData.put("ingredient", ning);
+                              maindb.updateChildren(updateData);
+                              maindb.child("myallergic_info").child("19").removeValue();
+                              break;
+                      }
+                      if(ning.equals("")) {
+                          updateData.put("ingredient", "없음");
+                          maindb.updateChildren(updateData);
+                      }
                   }
+
                 }
             });
 

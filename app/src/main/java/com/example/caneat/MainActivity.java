@@ -7,6 +7,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -36,13 +37,20 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     Button picture_button;
     FirebaseDatabase database;
     List<User> mUser;
+
+    TextView vegan;
+    TextView religion;
+    TextView allergic;
+    TextView ingredient;
+
+    public String veg;
+    public String rel;
     public String ing;
-    public String[] ning;
+    public String adding;
+    public String[] ingarray;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-
-
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main_page);
@@ -96,9 +104,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             }
         });
 
+        vegan=findViewById(R.id.vegan_content);
+        religion=findViewById(R.id.religion_content);
+        allergic=findViewById(R.id.allergic_content);
+        ingredient=findViewById(R.id.ingredient_content);
+
         FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
         String uid = user.getUid();
-        Log.d("로그확인",uid);
         DatabaseReference mydb = database.getReference("user").child(uid);
         mUser = new ArrayList<>();
 
@@ -108,14 +120,31 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 mUser.clear();
                 User user = dataSnapshot.getValue(User.class);
                 mUser.add(user);
+                veg = mUser.get(0).getVegan();
+                rel = mUser.get(0).getReligion();
                 ing = mUser.get(0).getIngredient();
-                ning =ing.split("@");
+                adding = mUser.get(0).getAddingredient();
+                /*
+                ingarray=ing.split("@");
+
                 String str="감자, 돼지고기, 당근, 양파, 새우";
-                for(String s : ning){
+                for(String s : ingarray){
                     if(str.contains(s)){
                         Log.d("성분검출",s);
                     }
                 }
+                *
+                */
+                String viewing="";
+                ingarray=ing.split("@");
+                for(String s : ingarray){
+                    viewing=(viewing+s+" ");
+                }
+                vegan.setText("내 비건: "+veg);
+                religion.setText("내 종교: "+rel);
+                allergic.setText("내 알레르기:"+viewing);
+                ingredient.setText("내 성분: "+adding);
+
             }
 
             @Override
@@ -123,7 +152,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 //Log.e("MainActivity", String.valueOf(databaseError.toException())); // 에러문 출력
             }
         });
-
 
 
     }

@@ -115,8 +115,10 @@ public class AdpaterAllergic extends RecyclerView.Adapter<AdpaterAllergic.MyHold
                 @Override
                 public void onClick(View v) {
                     String datanum;
-
                     int pos= getAdapterPosition();
+                    if(ing.contains("없음")){
+                        ing = "";
+                    }
                     if (pos!=RecyclerView.NO_POSITION) {
                         allergic_info allergicInfo = arrayList.get(pos);
                         if(!(ing.contains(allergicInfo.getAllergic_ingredient()))) {
