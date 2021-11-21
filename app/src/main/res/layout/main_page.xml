@@ -67,7 +67,7 @@
 
                 <TextView
                     android:layout_width="210dp"
-                    android:layout_height="43dp"
+                    android:layout_height="33dp"
                     android:layout_gravity="left"
                     android:paddingLeft="12dp"
                     android:layout_marginTop="5dp"
@@ -124,7 +124,7 @@
 
                 <TextView
                     android:layout_width="210dp"
-                    android:layout_height="43dp"
+                    android:layout_height="33dp"
                     android:layout_gravity="center"
                     android:text="종교"
                     android:textSize="18dp"
@@ -175,7 +175,7 @@
 
                 <TextView
                     android:layout_width="210dp"
-                    android:layout_height="43dp"
+                    android:layout_height="33dp"
                     android:layout_gravity="center"
                     android:text="알레르기"
                     android:textSize="18dp"
@@ -226,14 +226,14 @@
                 android:orientation="vertical">
 
                 <TextView
-                    android:textSize="18dp"
-                    android:textStyle="bold"
                     android:layout_width="210dp"
-                    android:layout_height="43dp"
+                    android:layout_height="33dp"
                     android:layout_gravity="center"
+                    android:paddingLeft="12dp"
                     android:text="개인등록성분"
                     android:textColor="@color/black"
-                    android:paddingLeft="12dp">
+                    android:textSize="18dp"
+                    android:textStyle="bold">
                 </TextView>
 
                 <TextView
@@ -242,7 +242,8 @@
                     android:layout_width="210dp"
                     android:layout_height="49dp"
                     android:text="못먹는 성분 내용"
-                    android:textColor="@color/black"></TextView>
+                    android:textColor="@color/black">
+                </TextView>
             </LinearLayout>
 
 
