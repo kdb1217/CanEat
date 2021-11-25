@@ -1,6 +1,11 @@
 package com.example.caneat;
+import static android.Manifest.permission_group.CAMERA;
+
+import android.Manifest;
+import android.app.Activity;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.graphics.Point;
 import android.graphics.Rect;
@@ -17,6 +22,8 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
 
 
 import com.google.android.gms.tasks.OnFailureListener;
@@ -73,7 +80,7 @@ public class MainActivity extends AppCompatActivity {
 
         database = FirebaseDatabase.getInstance();
 
-        picture_button = findViewById(R.id.picture_button);
+
 
         Button change_allergic=findViewById(R.id.change_allergic);
         change_allergic.setOnClickListener(new View.OnClickListener() {
@@ -169,12 +176,38 @@ public class MainActivity extends AppCompatActivity {
         });
 
 
+        picture_button = findViewById(R.id.picture_button);
+        picture_button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                int checkPermissions = ContextCompat.checkSelfPermission(MainActivity.this, Manifest.permission.CAMERA);
+                if(checkPermissions==PackageManager.PERMISSION_DENIED){
+                    ActivityCompat.requestPermissions(MainActivity.this, new String[]{Manifest.permission.CAMERA},0);
+                }else{
+                    showCamera();
+                }
+            }
+        });
+
     }
 
-    public void showCameraBtn(View view){
+    public void showCamera(){
         Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
         if(intent.resolveActivity(getPackageManager()) != null){
             startActivityForResult(intent, REQUEST_IMAGE_CAPTURE);
+        }
+    }
+
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+        if(requestCode==0){
+            if(grantResults[0]==0){
+                Toast.makeText(this,"카메라 승인", Toast.LENGTH_SHORT).show();
+            }else{
+                Toast.makeText(this,"카메라 거부",Toast.LENGTH_SHORT).show();
+            }
         }
     }
 
