@@ -80,6 +80,16 @@ public class Register_allergic_activity extends AppCompatActivity implements OnI
 
             }
         });
+
+        Button mypage=findViewById(R.id.mypage);
+        mypage.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent Mypage=new Intent(getApplicationContext(),Mypage_activity.class);
+                startActivity(Mypage);
+            }
+        });
+
         adapter=new AdpaterAllergic(arrayList,this);
         ingredientlistinfo.setAdapter(adapter);
 

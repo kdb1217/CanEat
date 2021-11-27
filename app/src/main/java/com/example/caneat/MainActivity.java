@@ -125,6 +125,15 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        Button mypage=findViewById(R.id.mypage);
+        mypage.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent Mypage=new Intent(getApplicationContext(),Mypage_activity.class);
+                startActivity(Mypage);
+            }
+        });
+
         vegan = findViewById(R.id.vegan_content);
         religion = findViewById(R.id.religion_content);
         allergic = findViewById(R.id.allergic_content);

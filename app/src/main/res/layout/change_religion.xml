@@ -36,6 +36,18 @@ android:backgroundTint="@color/white">
 
 </Button>
 
+    <Button
+        android:id="@+id/mypage"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_gravity="right"
+        android:background="@drawable/myicon2"
+        android:clickable="true"
+        tools:ignore="SpeakableTextPresentCheck"
+        tools:layout_editor_absoluteX="351dp"
+        android:focusable="true">
+    </Button>
+
 
 </androidx.appcompat.widget.Toolbar>
 
