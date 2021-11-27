@@ -326,14 +326,18 @@ public class MainActivity extends AppCompatActivity {
 
 
         if (!(ing.equals("없음"))) {   //알레르기 비교
+            ingarray = ing.split("@");
             for (String s : ingarray) {
-                if (OCRTEXT.contains(s)) {
-                    if(!(messageText.contains(s))) messageText.add(s);
+                if(!(s.equals(""))) {
+                    if (OCRTEXT.contains(s)) {
+                        if (!(messageText.contains(s))) messageText.add(s);
+                    }
                 }
             }
         }
+        //messageText.get(0).equals("")
 
-        if(messageText.get(0).equals("")) {
+        if(messageText.isEmpty()) {
             message="이 식품은 먹어도 되는 식품입니다.";
         }
         else {
