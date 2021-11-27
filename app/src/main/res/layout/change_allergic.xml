@@ -26,6 +26,8 @@
 
         </ImageView>
 
+
+
         <Button
             android:id="@+id/myinfo"
             android:layout_width="50dp"
@@ -35,6 +37,18 @@
             android:clickable="true"
             tools:ignore="SpeakableTextPresentCheck">
 
+        </Button>
+
+        <Button
+            android:id="@+id/mypage"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_gravity="right"
+            android:background="@drawable/myicon2"
+            android:clickable="true"
+            tools:ignore="SpeakableTextPresentCheck"
+            tools:layout_editor_absoluteX="351dp"
+            android:focusable="true">
         </Button>
 
 

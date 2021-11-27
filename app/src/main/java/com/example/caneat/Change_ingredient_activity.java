@@ -66,6 +66,15 @@ public class Change_ingredient_activity extends AppCompatActivity {
                 startActivity(My_info);
             }
         });
+
+        Button mypage=findViewById(R.id.mypage);
+        mypage.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent Mypage=new Intent(getApplicationContext(),Mypage_activity.class);
+                startActivity(Mypage);
+            }
+        });
     }
 }
 

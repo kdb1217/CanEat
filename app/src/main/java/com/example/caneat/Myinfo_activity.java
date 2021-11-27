@@ -67,9 +67,6 @@ public class Myinfo_activity extends AppCompatActivity implements View.OnClickLi
                 new FusedLocationSource(this, LOCATION_PERMISSION_REQUEST_CODE);
 
 
-        google_signout=findViewById(R.id.google_logout);
-        auth=FirebaseAuth.getInstance();
-        google_signout.setOnClickListener(this);
 
     }
 

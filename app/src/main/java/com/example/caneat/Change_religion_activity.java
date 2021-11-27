@@ -75,6 +75,15 @@ public class Change_religion_activity extends AppCompatActivity {
             }
         });
 
+        Button mypage=findViewById(R.id.mypage);
+        mypage.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent Mypage=new Intent(getApplicationContext(),Mypage_activity.class);
+                startActivity(Mypage);
+            }
+        });
+
 
         adapter=new AdapterReligion(arrayList,this);
         religionlistinfo.setAdapter(adapter);

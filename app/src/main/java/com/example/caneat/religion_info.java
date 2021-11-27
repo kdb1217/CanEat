@@ -4,15 +4,6 @@ public class religion_info {
    private String religion_name;
    private String religion_ingredient;
 
-    public boolean isInSelected() {
-        return inSelected;
-    }
-
-    public void setInSelected(boolean inSelected) {
-        this.inSelected = inSelected;
-    }
-
-    boolean inSelected;
 
     public String getReligion_name() {
         return religion_name;
