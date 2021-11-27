@@ -127,7 +127,7 @@ public class AdpaterAllergic extends RecyclerView.Adapter<AdpaterAllergic.MyHold
                         allergic_info allergicInfo = arrayList.get(pos);
                         Intent intent =((Activity)context).getIntent();
                         if(!(ing.contains(allergicInfo.getAllergic_ingredient()))) {
-                            toast= Toast.makeText(context,"등록이 완료되었습니", Toast.LENGTH_SHORT);
+                            toast= Toast.makeText(context,"등록이 완료되었습니다", Toast.LENGTH_SHORT);
                             toast.show();
                             switch (allergicInfo.getAllergic_ingredient()) {
                                 case "소고기":

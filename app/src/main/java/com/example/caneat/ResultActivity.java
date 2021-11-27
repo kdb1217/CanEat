@@ -20,19 +20,17 @@ public class ResultActivity extends Activity {
 
         resulttext=findViewById(R.id.result_text);
 
-       /* Intent intent = getIntent();  텍스트 설정
+        Intent intent = getIntent();
         String data = intent.getStringExtra("data");
         resulttext.setText(data);
-        */
-
 
     }
     public  void OnClose(View view){
-        Intent intent=new Intent();
-        intent.putExtra("result","Close Popup");
-        setResult(RESULT_OK,intent);
-
-        finish();
+        //Intent intent=new Intent();
+        //intent.putExtra("result","Close Popup");
+        //setResult(RESULT_OK,intent);
+        Intent mainpage =new Intent(getApplicationContext(),MainActivity.class);
+        startActivity(mainpage);
     }
 
     @Override
@@ -42,6 +40,7 @@ public class ResultActivity extends Activity {
         }
         return true;
     }
+
     @Override
     public void onBackPressed(){//뒤로가기 버튼 막기
         return;

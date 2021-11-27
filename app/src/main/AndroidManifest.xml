@@ -41,6 +41,8 @@
         <activity android:name=".Change_vegan_activity"></activity>
         <activity android:name=".Change_allergic_activity"></activity>
         <activity android:name=".Change_ingredient_activity"></activity>
+        <activity android:name=".ResultActivity" android:theme="@android:style/Theme.Dialog" />
+
     </application>
 
 </manifest>

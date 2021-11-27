@@ -6,31 +6,33 @@
     android:orientation="vertical">
 
     <LinearLayout
-        android:layout_width="match_parent"
+        android:layout_width="400dp"
         android:layout_height="200dp"
+        android:background="@drawable/roundlayout"
         android:orientation="vertical"
-        android:background="@drawable/roundlayout">
+        android:layout_gravity="center_horizontal">
 
         <TextView
             android:id="@+id/result_text"
+            android:paddingLeft="10dp"
             android:layout_width="match_parent"
             android:layout_height="130dp"
             android:layout_gravity="center"
             android:text="결과창이 띄워질 곳"
             android:textColor="@color/black"
-            android:textStyle="bold">
-        </TextView>
+            android:textSize="20dp"
+            android:textStyle="bold"></TextView>
 
         <Button
             android:id="@+id/result_btn"
-            android:layout_marginTop="8dp"
             android:layout_width="147dp"
             android:layout_height="52dp"
-            android:background="@drawable/register_button"
             android:layout_gravity="center"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/register_button"
+            android:onClick="OnClose"
             android:text="확인 완료"
-            android:textColor="@color/black">
-        </Button>
+            android:textColor="@color/black"></Button>
 
 
     </LinearLayout>>
