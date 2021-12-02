@@ -258,41 +258,54 @@ public class MainActivity extends AppCompatActivity {
         ArrayList<String> messageText = new ArrayList<>();
         String message="";
 
-        if (!(vegan.equals("없음"))) {  //비건 비교
-            if (vegan.equals("비건")) {
+        if (!(veg.equals("없음"))) {  //비건 비교
+
+            if (veg.equals("비건")) {
                 String[] veganarray = {"돼지", "돼지고기", "닭", "닭고기", "소고기", "쇠고기", "양고기", "오리", "오리고기", "거위", "칠면조", "참치", "꽁치", "정어리", "청어",
                         "고등어", "연어", "청어", "가다랑어", "계란", "달걀", "메추리알", "연어알", "캐비어", "명란", "우유", "크림", "치즈", "버터", "분유", "꿀", "벌꿀",
                         "부레풀", "E120", "E322", "E422", "E471", "E542", "E631", "E901", "E904"};
                 for (String s : veganarray) {
-                    if (OCRTEXT.contains(s)) messageText.add(s);
+                    if (OCRTEXT.contains(s)) {
+                        if(!(messageText.contains(s))) messageText.add(s);
+                    }
                 }
-            } else if (vegan.equals("락토 베지터리언")) {
+            } else if (veg.equals("락토 베지터리언")) {
                 String[] veganarray = {"돼지", "돼지고기", "닭", "닭고기", "소고기", "쇠고기", "양고기", "오리", "오리고기", "거위", "칠면조", "참치", "꽁치", "정어리", "청어",
                         "고등어", "연어", "청어", "가다랑어", "계란", "달걀", "메추리알", "연어알", "캐비어", "명란", "부레풀"};
                 for (String s : veganarray) {
-                    if (OCRTEXT.contains(s)) messageText.add(s);
+                    if (OCRTEXT.contains(s)) {
+                        if(!(messageText.contains(s))) messageText.add(s);
+                    }
                 }
-            } else if (vegan.equals("오보 베지테리언")) {
+            } else if (veg.equals("오보 베지테리언")) {
                 String[] veganarray = {"돼지", "돼지고기", "닭", "닭고기", "소고기", "쇠고기", "양고기", "오리", "오리고기", "거위", "칠면조", "참치", "꽁치", "정어리", "청어",
                         "고등어", "연어", "청어", "가다랑어", "우유", "크림", "치즈", "버터", "분유", "부레풀"};
                 for (String s : veganarray) {
-                    if (OCRTEXT.contains(s)) messageText.add(s);
+                    if (OCRTEXT.contains(s)) {
+                        if(!(messageText.contains(s))) messageText.add(s);
+                    }
                 }
-            } else if (vegan.equals("락토 오보 베지터리언")) {
+            } else if (veg.equals("락토 오보 베지터리언")) {
                 String[] veganarray = {"돼지", "돼지고기", "닭", "닭고기", "소고기", "쇠고기", "양고기", "오리", "오리고기", "거위", "칠면조", "참치", "꽁치", "정어리", "청어",
                         "고등어", "연어", "청어", "가다랑어", "부레풀"};
                 for (String s : veganarray) {
-                    if (OCRTEXT.contains(s)) messageText.add(s);
+                    if (OCRTEXT.contains(s)) {
+                        if(!(messageText.contains(s))) messageText.add(s);
+                    }
                 }
-            } else if (vegan.equals("페스코 베지터리언")) {
+            } else if (veg.equals("페스코 베지터리언")) {
                 String[] veganarray = {"돼지", "돼지고기", "닭", "닭고기", "소고기", "쇠고기", "양고기", "오리", "오리고기", "거위", "칠면조"};
                 for (String s : veganarray) {
-                    if (OCRTEXT.contains(s)) messageText.add(s);
+                    if (OCRTEXT.contains(s)) {
+                        if(!(messageText.contains(s))) messageText.add(s);
+                    }
                 }
-            } else if (vegan.equals("폴로 베지테리언")) {
+            } else if (veg.equals("폴로 베지테리언")) {
                 String[] veganarray = {"돼지", "돼지고기", "소고기", "쇠고기", "양고기"};
                 for (String s : veganarray) {
-                    if (OCRTEXT.contains(s)) messageText.add(s);
+                    if (OCRTEXT.contains(s)) {
+                        if(!(messageText.contains(s))) messageText.add(s);
+                    }
                 }
             }
 
