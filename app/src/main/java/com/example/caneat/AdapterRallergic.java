@@ -121,7 +121,7 @@ public class AdapterRallergic extends RecyclerView.Adapter<AdapterRallergic.RHol
                       ((Activity)context).overridePendingTransition(0,0);
                         switch (Myallergic_info.getAllergic_ingredient()){
                               case "소고기":
-                                  ning=ing.replace(("@"+Myallergic_info.getAllergic_ingredient()),"");
+                                  ning=ing.replace(("@"+Myallergic_info.getAllergic_ingredient()+"@쇠고기"),"");
                                   updateData.put("ingredient",ning);
                                   maindb.updateChildren(updateData);
                                   maindb.child("myallergic_info").child("1").removeValue();
