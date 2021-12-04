@@ -135,6 +135,7 @@ public class AdpaterAllergic extends RecyclerView.Adapter<AdpaterAllergic.MyHold
                                     datanum = Integer.toString(i);
                                     maindb.child(uid).child("myallergic_info").child(datanum).setValue(allergicInfo);
                                     ning = ing + ('@' + (allergicInfo.getAllergic_ingredient()));
+                                    ning+="@쇠고기";
                                     updateData.put("ingredient", ning);
                                     maindb.child(uid).updateChildren(updateData);
                                     ((Activity)context).finish();
