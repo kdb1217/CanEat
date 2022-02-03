@@ -74,6 +74,7 @@ public class Change_religion_activity extends AppCompatActivity {
 
             }
         });
+        asdfasdf;
 
         Button mypage=findViewById(R.id.mypage);
         mypage.setOnClickListener(new View.OnClickListener() {
